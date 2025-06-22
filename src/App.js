@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import CalendarGrid from './components/CalendarGrid';
+import DayModal from './components/DayModal';
+import dayDataJson from './data/days.json';
 
 function App() {
+  const [selectedDay, setSelectedDay] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Adventskalender</h1>
+      <CalendarGrid onSelectDay={setSelectedDay} />
+      <DayModal dayData={dayDataJson[selectedDay]} onClose={() => setSelectedDay(null)} />
     </div>
   );
 }

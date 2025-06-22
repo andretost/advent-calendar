@@ -1,0 +1,12 @@
+{
+  "01": {
+    "text": "Am ersten Dezember öffnete sich das erste Fenster...",
+    "image": "images/01.jpg",
+    "audio": "audio/01.mp3"
+  },
+  "02": {
+    "text": "Hinter dem zweiten Fenster verbarg sich...",
+    "image": "images/02.jpg",
+    "audio": "audio/02.mp3"
+  }
+}
