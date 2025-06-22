@@ -1,12 +1,123 @@
 {
   "01": {
     "text": "Am ersten Dezember öffnete sich das erste Fenster...",
-    "image": "images/01.jpg",
+    "image": "images/01.png",
     "audio": "audio/01.mp3"
   },
   "02": {
     "text": "Hinter dem zweiten Fenster verbarg sich...",
-    "image": "images/02.jpg",
+    "image": "images/02.png",
     "audio": "audio/02.mp3"
+  },
+  "03": {
+    "text": "Am dritten Tag geschah etwas Überraschendes...",
+    "image": "images/03.png",
+    "audio": "audio/03.mp3"
+  },
+  "04": {
+    "text": "Ein geheimnisvolles Licht erschien am vierten Dezember...",
+    "image": "images/04.png",
+    "audio": "audio/04.mp3"
+  },
+  "05": {
+    "text": "Hinter dem fünften Fenster verbarg sich ein Lächeln...",
+    "image": "images/05.png",
+    "audio": "audio/05.mp3"
+  },
+  "06": {
+    "text": "Der Nikolaus hinterließ Spuren am sechsten Dezember...",
+    "image": "images/06.png",
+    "audio": "audio/06.mp3"
+  },
+  "07": {
+    "text": "Ein leiser Schneefall begleitete den siebten Tag...",
+    "image": "images/07.png",
+    "audio": "audio/07.mp3"
+  },
+  "08": {
+    "text": "Ein Brief wurde am achten Tag gefunden...",
+    "image": "images/08.png",
+    "audio": "audio/08.mp3"
+  },
+  "09": {
+    "text": "Ein kleiner Vogel flatterte durch das neunte Fenster...",
+    "image": "images/09.png",
+    "audio": "audio/09.mp3"
+  },
+  "10": {
+    "text": "Ein neues Geräusch erklang am zehnten Dezember...",
+    "image": "images/10.png",
+    "audio": "audio/10.mp3"
+  },
+  "11": {
+    "text": "Am elften Tag wurde es draußen plötzlich ganz still...",
+    "image": "images/11.png",
+    "audio": "audio/11.mp3"
+  },
+  "12": {
+    "text": "Ein süßer Duft kam aus dem zwölften Fenster...",
+    "image": "images/12.png",
+    "audio": "audio/12.mp3"
+  },
+  "13": {
+    "text": "Ein Stern wurde am Himmel entdeckt – am dreizehnten Dezember...",
+    "image": "images/13.png",
+    "audio": "audio/13.mp3"
+  },
+  "14": {
+    "text": "Ein verlorenes Spielzeug lag hinter dem vierzehnten Fenster...",
+    "image": "images/14.png",
+    "audio": "audio/14.mp3"
+  },
+  "15": {
+    "text": "Eine Stimme aus der Ferne ertönte am fünfzehnten Tag...",
+    "image": "images/15.png",
+    "audio": "audio/15.mp3"
+  },
+  "16": {
+    "text": "Am sechzehnten Dezember kam Besuch...",
+    "image": "images/16.png",
+    "audio": "audio/16.mp3"
+  },
+  "17": {
+    "text": "Ein Schatten bewegte sich durch das siebzehnte Fenster...",
+    "image": "images/17.png",
+    "audio": "audio/17.mp3"
+  },
+  "18": {
+    "text": "Ein altes Foto wurde gefunden – hinter dem achtzehnten Fenster...",
+    "image": "images/18.png",
+    "audio": "audio/18.mp3"
+  },
+  "19": {
+    "text": "Ein Lied erklang leise am neunzehnten Dezember...",
+    "image": "images/19.png",
+    "audio": "audio/19.mp3"
+  },
+  "20": {
+    "text": "Ein Geschenk erschien am zwanzigsten Tag...",
+    "image": "images/20.png",
+    "audio": "audio/20.mp3"
+  },
+  "21": {
+    "text": "Die längste Nacht des Jahres brachte am einundzwanzigsten Dezember ein Licht...",
+    "image": "images/21.png",
+    "audio": "audio/21.mp3"
+  },
+  "22": {
+    "text": "Ein versiegelter Umschlag lag hinter dem zweiundzwanzigsten Fenster...",
+    "image": "images/22.png",
+    "audio": "audio/22.mp3"
+  },
+  "23": {
+    "text": "Ein vertrauter Klang kündigte den dreiundzwanzigsten Tag an...",
+    "image": "images/23.png",
+    "audio": "audio/23.mp3"
+  },
+  "24": {
+    "text": "Am vierundzwanzigsten Dezember öffnete sich das große Türchen – es war Weihnachten.",
+    "image": "images/24.png",
+    "audio": "audio/24.mp3"
   }
 }
+

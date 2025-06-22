@@ -5,7 +5,7 @@ export default function DayModal({ dayData, onClose }) {
 
   return (
     <div className="modal">
-      <img src={dayData.image} alt="Illustration" />
+      <img src={`${process.env.PUBLIC_URL}/${dayData.image}`} alt="Illustration" />
       <p>{dayData.text}</p>
       <audio controls src={dayData.audio}></audio>
       <button onClick={onClose}>Schließen</button>
