@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import CalendarImage from './components/CalendarImage';
-import DayModal from './components/DayModal';
-import dayDataJson from './data/days.json';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import CalendarPage from './pages/CalendarPage';
 
 function App() {
-  const [selectedDay, setSelectedDay] = useState(null);
-
   return (
-    <div className="app">
-      <h1>Adventskalender</h1>
-      <CalendarImage onSelectDay={setSelectedDay} />
-      <DayModal dayData={dayDataJson[selectedDay]} onClose={() => setSelectedDay(null)} />
-    </div>
+    <Router basename="/advent-calendar">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/calendar" element={<CalendarPage />} />
+      </Routes>
+    </Router>
   );
 }
-
 export default App;

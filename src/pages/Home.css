@@ -1,0 +1,86 @@
+.home-container {
+  min-height: 100vh;
+  padding: 2rem;
+  color: #fff;
+  font-family: 'Georgia', serif;
+  text-align: center;
+}
+
+.home-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-header h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.home-text {
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+  color: black;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.start-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #d32f2f;
+}
+
+.boy-image {
+  position: absolute; /* or use flex if preferred */
+  right: 2rem;
+  bottom: 0;
+  height: 70vh;
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+h1 {
+  font-family: 'Mountains of Christmas', serif;
+  font-size: 100px !important;        /* Increase to make it bigger */
+  font-weight: bold;      /* Ensures it's bold */
+  color: #8b1a1a;          /* Deep red, festive */
+  text-align: center;      /* Optional, centers the heading */
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem !important;
+  font-weight: 500;        /* Medium weight for a subtitle */
+  color: #3b2f2f;
+  text-align: center;
+  margin-bottom: 2rem;
+}

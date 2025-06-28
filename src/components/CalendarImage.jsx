@@ -40,6 +40,29 @@ const CalendarImage = () => {
   const [imageBox, setImageBox] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
 
+  // 1. Handle image load (first run)
+  useEffect(() => {
+    const image = imageRef.current;
+
+    const updateSize = () => {
+      if (image) {
+        const rect = image.getBoundingClientRect();
+        console.log('imageBox:', rect);
+        setImageBox(rect);
+      }
+    };
+
+    if (image && image.complete) {
+      // If image already loaded (e.g., from cache)
+      updateSize();
+    } else if (image) {
+      // If image still loading
+      image.addEventListener('load', updateSize);
+      return () => image.removeEventListener('load', updateSize);
+    }
+  }, []); // Runs only once on mount
+
+  // 2. Handle browser window resizing
   useEffect(() => {
     const updateSize = () => {
       if (imageRef.current) {
@@ -48,10 +71,9 @@ const CalendarImage = () => {
       }
     };
 
-    updateSize();
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
-  }, []);
+  }, []); // Also only once, with cleanup
 
   const closeModal = () => setSelectedDay(null);
 
@@ -63,7 +85,7 @@ const CalendarImage = () => {
     return (
       <div>
         <button onClick={closeModal} style={{ float: 'right' }}>✕</button>
-        <h2>Day {selectedDay}</h2>
+        <h2>{getGermanDate(selectedDay)}</h2>
         <p>{content.text}</p>
         <img src={`${process.env.PUBLIC_URL}/${content.image}`} alt={`Day ${selectedDay}`} style={{ maxWidth: '100%' }} />
         <audio controls src={`${process.env.PUBLIC_URL}/${content.audio}`} />
@@ -110,10 +132,10 @@ const CalendarImage = () => {
         contentLabel="Day Content"
         style={{
           content: {
-            maxWidth: '600px',
+            maxWidth: '800px',
             margin: 'auto',
             inset: 'auto',
-            padding: '20px',
+            padding: '30px',
             borderRadius: '10px',
           },
           overlay: {
@@ -126,6 +148,11 @@ const CalendarImage = () => {
       </Modal>
     </div>
   );
+};
+
+const getGermanDate = (dayString) => {
+  const dayNumber = parseInt(dayString, 10); // "01" -> 1
+  return `${dayNumber}. Dezember`;
 };
 
 export default CalendarImage;

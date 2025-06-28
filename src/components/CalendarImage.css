@@ -5,7 +5,6 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: #fff;
 }
 
 .image-wrapper {
@@ -28,26 +27,47 @@
   top: 0;
   left: 0;
   z-index: 10;
-  pointer-events: none;
+  pointer-events: auto;
   outline: 2px solid lime; /* debug */
+}
+
+.day-wrapper {
+  position: absolute;
 }
 
 .day-region {
   position: absolute;
+  width: 100%;
+  height: 100%;
   background: transparent;
   border: none;
-  color: white;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: auto;
-  z-index: 11;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 0.6; /* match your .star-overlay opacity */
+    transform: scale(1);
+  }
+}
+
+.star-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.6;
+  animation: fadeIn 0.6s ease-out;
 }
 
 .day-region:hover {
   background: rgba(255, 255, 255, 0.3);
   outline: 2px solid yellow;
 }
-
 
