@@ -20,30 +20,45 @@ function Home() {
 
       <div className="home-content">
         <div className="home-text">
-          <p>Willkommen! 
+          <p>
+            Willkommen! 
             Dieses Buch erzählt die Geschichte von Tarek, einem jungen Flüchtling aus Syrien, den es mit seiner Familie nach Osnabrück verschlagen hat. Während der Adventszeit lernt er die Menschen in seinem Haus kennen, und gewinnt einen Einblick in ihre vorweihnachtlichen Gebräuche - und die damit verbundenen Rezepte!
+          </p>
 
-Dabei ist es nicht wirklich ein Buch, sondern ein Adventskalender. Jeder Tag hat eine neue Geschichte, bis es schliesslich und endlich Weihnachten ist.
+          <p>
+            Dabei ist es nicht wirklich ein Buch, sondern ein Adventskalender. Jeder Tag hat eine neue Geschichte, bis es schliesslich und endlich Weihnachten ist.
+          </p>
 
-Wir hoffen, dass die Geschichte euch ermuntert, selbst ein wenig zu backen und zu kochen und zu basteln. Aber nicht vergessen: nur eine Seite pro Tag!
+          <p>
+            Wir hoffen, dass die Geschichte euch ermuntert, selbst ein wenig zu backen und zu kochen und zu basteln. Aber nicht vergessen: nur eine Seite pro Tag!
+          </p>
 
-Viel Spass!!!
-            Klicke unten, um den Adventskalender zu öffnen.</p>
-          <button onClick={() => navigate('/calendar')} className="start-button">
-            Zum Kalender
-          </button>
-          <audio controls src={`${process.env.PUBLIC_URL}/audio/intro.mp3`}>
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+          <p>Viel Spass!!!</p>
 
-        <img
-          src={`${process.env.PUBLIC_URL}/images/tarek.png`}
-          alt="Tarek"
-          className="boy-image"
-        />
-      </div>
-    </div>
+          <p>Klicke unten, um den Adventskalender zu öffnen.</p>
+
+          <div>
+            <button onClick={() => navigate('/calendar')} className="start-button">
+              Zum Kalender
+            </button>
+          </div>
+
+          <p>Klicke hier, um das Audio zu hören.</p>
+
+          <div>
+            <audio controls src={`${process.env.PUBLIC_URL}/audio/intro.mp3`}>
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+
+          <img
+            src={`${process.env.PUBLIC_URL}/images/tarek.png`}
+            alt="Tarek"
+            className="boy-image"
+          />
+        </div> {/* Close home-text */}
+      </div> {/* Close home-content */}
+    </div> // <-- Close home-container
   );
 }
 
