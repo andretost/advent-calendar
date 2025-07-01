@@ -38,8 +38,8 @@ function Home() {
           <p>Klicke unten, um den Adventskalender zu öffnen.</p>
 
           <div>
-            <button onClick={() => navigate('/calendar')} className="start-button">
-              Zum Kalender
+            <button onClick={() => navigate('/intro')} className="start-button">
+              Hier geht's los...
             </button>
           </div>
 

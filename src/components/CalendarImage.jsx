@@ -35,10 +35,11 @@ const windows = [
   { day: "24", x: 880, y: 1260, w: 175, h: 175 },
 ];
 
-const CalendarImage = () => {
+const CalendarImage = ({ onSelectDay }) => {
   const imageRef = useRef();
   const [imageBox, setImageBox] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
+  const [openedDays, setOpenedDays] = useState([]);
 
   // 1. Handle image load (first run)
   useEffect(() => {
@@ -109,17 +110,32 @@ const CalendarImage = () => {
               const scaleY = imageBox.height / originalHeight;
 
               return (
-                <button
+                <div
                   key={day}
-                  className="day-region"
+                  className="day-wrapper"
                   style={{
                     left: `${x * scaleX}px`,
                     top: `${y * scaleY}px`,
                     width: `${w * scaleX}px`,
                     height: `${h * scaleY}px`,
-                  }}
-                  onClick={() => setSelectedDay(day)}
-                />
+                    position: 'absolute',
+                  }}                
+                >
+                  <button
+                    className="day-region"
+                    onClick={() => {
+                      setOpenedDays(prev => [...new Set([...prev, day])]);
+                      setSelectedDay(day);
+                    }}                    
+                  />
+                  {openedDays.includes(day) && (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/star.png`}
+                      alt="Opened"
+                      className="star-overlay"
+                    />
+                  )}
+                </div>
               );
             })}
           </div>
