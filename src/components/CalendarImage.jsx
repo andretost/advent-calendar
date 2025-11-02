@@ -40,6 +40,7 @@ const CalendarImage = ({ onSelectDay }) => {
   const [imageBox, setImageBox] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
   const [openedDays, setOpenedDays] = useState([]);
+  const [showModalImage, setShowModalImage] = useState(true);
 
   // 1. Handle image load (first run)
   useEffect(() => {
@@ -76,7 +77,14 @@ const CalendarImage = ({ onSelectDay }) => {
     return () => window.removeEventListener('resize', updateSize);
   }, []); // Also only once, with cleanup
 
-  const closeModal = () => setSelectedDay(null);
+  const closeModal = () => {
+    setSelectedDay(null);
+    setShowModalImage(true); // Reset to show image when modal closes
+  };
+
+  const handleModalFlip = () => {
+    setShowModalImage(!showModalImage);
+  };
 
   const renderModalContent = () => {
     if (!selectedDay) return null;
@@ -84,12 +92,47 @@ const CalendarImage = ({ onSelectDay }) => {
     if (!content) return <p>No content found for day {selectedDay}.</p>;
 
     return (
-      <div>
+      <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
         <button onClick={closeModal} style={{ float: 'right' }}>✕</button>
         <h2>{getGermanDate(selectedDay)}</h2>
-        <p>{content.text}</p>
-        <img src={`${process.env.PUBLIC_URL}/${content.image}`} alt={`Day ${selectedDay}`} style={{ maxWidth: '100%' }} />
-        <audio controls src={`${process.env.PUBLIC_URL}/${content.audio}`} />
+        <div style={{ flexGrow: 1, overflowY: 'auto' }}>
+          {showModalImage ? (
+            <div style={{ position: 'relative' }}>
+              <p
+                style={{
+                  fontFamily: '"Arial Black", Gadget, sans-serif',
+                  fontSize: '1.5em',
+                  fontWeight: 'bold',
+                  color: '#333',
+                  marginBottom: '10px',
+                  textAlign: 'center',
+                }}
+              >
+                {content.text}
+              </p>
+              <img
+                src={`${process.env.PUBLIC_URL}/${content.image}`}
+                alt={`Day ${selectedDay}`}
+                style={{ maxWidth: '100%', maxHeight: 'calc(100% - 180px)', objectFit: 'contain', cursor: 'pointer' }}
+                onClick={handleModalFlip}
+              />
+            </div>
+          ) : (
+            <p onClick={handleModalFlip} style={{ cursor: 'pointer' }}>
+              {content.longText.split('\n\n').map((paragraph, pIdx) => (
+                <p key={pIdx} style={{ marginBottom: '1em' }}>
+                  {paragraph.split('\n').map((line, lIdx) => (
+                    <React.Fragment key={lIdx}>
+                      {line}
+                      {lIdx < paragraph.split('\n').length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </p>
+              ))}
+            </p>
+          )}
+          <audio controls src={`${process.env.PUBLIC_URL}/${content.audio}`} style={{ marginTop: '10px' }} />
+        </div>
       </div>
     );
   };
@@ -151,8 +194,10 @@ const CalendarImage = ({ onSelectDay }) => {
             maxWidth: '800px',
             margin: 'auto',
             inset: 'auto',
-            padding: '30px',
+            padding: '15px',
             borderRadius: '10px',
+            width: '800px',
+            height: '750px',
           },
           overlay: {
             backgroundColor: 'rgba(0,0,0,0.5)',
