@@ -1,0 +1,91 @@
+.about-page {
+  min-height: 100vh;
+  padding: 2rem;
+  color: #fff; /* Default text color for the page */
+  font-family: 'Georgia', serif;
+  text-align: center;
+}
+
+.about-page h1 {
+  font-family: 'Mountains of Christmas', serif;
+  font-size: 3rem; /* Adjusted for about page, can be tweaked */
+  font-weight: bold;
+  color: #8b1a1a; /* Deep red, festive */
+  margin-bottom: 2rem;
+}
+
+.about-content-wrapper {
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+  color: black;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left; /* Align text left within the content box */
+}
+
+.author-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.author-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #8b1a1a; /* Festive border */
+}
+
+.author-bio h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #3b2f2f; /* Darker neutral */
+  margin-bottom: 1rem;
+  text-align: center; /* Center the author heading */
+}
+
+.author-bio p {
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.contributors-section {
+  margin-top: 2rem;
+}
+
+.contributors-section h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #3b2f2f;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contributors-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contributors-section li {
+  margin-bottom: 1em;
+}
+
+.contributors-section strong {
+  color: #8b1a1a; /* Highlight contributor names */
+}
+
+.contributors-section li p {
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  color: #555;
+  text-align: justify;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Home() {
   const navigate = useNavigate();
@@ -41,6 +41,7 @@ function Home() {
             <button onClick={() => navigate('/intro')} className="start-button">
               Hier geht's los...
             </button>
+            <Link to="/about" className="about-link" style={{ display: 'block', marginTop: '20px', color: '#007bff', textDecoration: 'underline' }}>About</Link>
           </div>
 
           <p>Klicke hier, um das Audio zu hören.</p>
