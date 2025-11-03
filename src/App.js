@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import CalendarPage from './pages/CalendarPage';
 import IntroPage from './pages/IntroPage';
 import About from './pages/About';
+import Recipes from './pages/Recipes'; // Import Recipes component
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/intro" element={<IntroPage />} />
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/recipes" element={<Recipes />} /> {/* Add route for Recipes page */}
         </Routes>
       </AppLayout>
     </Router>

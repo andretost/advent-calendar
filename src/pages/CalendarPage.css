@@ -4,3 +4,90 @@
   font-family: 'Georgia', serif; /* Consistent with home-container */
   text-align: center;
 }
+
+.calendar-page-content {
+  display: flex;
+  /* flex-wrap: wrap; */ /* Revert to removed for now */
+  gap: 1.5rem; /* Space between image and text box */
+  height: 100%; /* Revert to 100% */
+  width: 100%;
+  padding: 1rem; /* Internal padding for the content area */
+  overflow-y: auto; /* Allow scrolling if combined content overflows */
+  align-items: flex-start; /* Align items to the top */
+  justify-content: center; /* Center the content horizontally */
+  max-width: 1200px; /* Limit the overall width of the content area */
+  margin: 0 auto; /* Center the content area itself */
+}
+
+.calendar-image-wrapper-in-page {
+  flex: 0 0 auto; /* Allow image wrapper to take its natural size */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 750px; /* Increased width to make image a tiny bit bigger */
+}
+
+.calendar-info-box {
+  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
+  color: black;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid transparent; /* Subtle border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  flex: 0 0 350px; /* Fixed width, prevent shrinking */
+  max-width: 350px; /* Max width for consistency */
+  text-align: left;
+}
+
+.calendar-info-box:hover {
+  border-color: #8b1a1a;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-info-box h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #3b2f2f;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Responsive adjustments for Calendar Page */
+@media (max-width: 1050px) {
+  .calendar-page-content {
+    flex-direction: column; /* Stack vertically on smaller screens */
+    align-items: center;
+  }
+  .calendar-image-wrapper-in-page,
+  .calendar-info-box {
+    flex: 1 1 100%; /* Take full width when stacked */
+    max-width: 95%; /* Limit width on smaller screens */
+  }
+  .calendar-info-box {
+    margin-top: 1.5rem; /* Space between image and text when stacked */
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-page-content {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+    padding: 0.8rem;
+  }
+
+  .calendar-info-box {
+    flex: 0 0 auto; /* Reset flex */
+    max-width: 95%;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-top: 1.5rem; /* Space between image and text box when stacked */
+  }
+
+  .calendar-info-box h3 {
+    font-size: 1.3rem;
+  }
+}
