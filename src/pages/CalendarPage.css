@@ -1,0 +1,6 @@
+.calendar-page {
+  min-height: 100vh;
+  color: #fff; /* Consistent with home-container */
+  font-family: 'Georgia', serif; /* Consistent with home-container */
+  text-align: center;
+}
