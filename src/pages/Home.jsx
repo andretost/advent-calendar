@@ -41,7 +41,7 @@ function Home() {
             <button onClick={() => navigate('/intro')} className="start-button">
               Hier geht's los...
             </button>
-            <Link to="/about" className="about-link" style={{ display: 'block', marginTop: '20px', color: '#007bff', textDecoration: 'underline' }}>About</Link>
+            <Link to="/about" className="about-link" style={{ display: 'block', marginTop: '20px', color: '#007bff', textDecoration: 'underline' }}>Über dieses Projekt...</Link>
           </div>
 
           <p>Klicke hier, um das Audio zu hören.</p>
