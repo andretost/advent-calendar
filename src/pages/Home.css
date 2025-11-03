@@ -9,12 +9,14 @@
 .home-header h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .home-header h2 {
   font-size: 1.5rem;
   font-weight: 300;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .home-content {
@@ -32,9 +34,17 @@
   margin: 2rem auto;
   max-width: 800px;
   border-radius: 12px;
+  border: 2px solid transparent; /* Subtle border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.8; /* Increased line height for better readability */
+  letter-spacing: 0.02em; /* Subtle letter spacing */
+}
+
+.home-text:hover {
+  border-color: #8b1a1a; /* Festive red border on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Slightly more pronounced shadow */
 }
 
 .start-button {
@@ -46,11 +56,21 @@
   font-size: 1.2rem;
   cursor: pointer;
   border-radius: 8px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .start-button:hover {
   background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+.about-link {
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.about-link:hover {
+  color: #c0c0c0 !important; /* Lighter grey for hover */
+  transform: translateY(-2px);
 }
 
 .boy-image {
@@ -83,4 +103,91 @@ h2 {
   color: #3b2f2f;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .home-header h1 {
+    font-size: 4rem !important;
+  }
+
+  .home-header h2 {
+    font-size: 2.5rem !important;
+  }
+
+  .home-text {
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+
+  .boy-image {
+    height: 60vh;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .home-header h1 {
+    font-size: 3rem !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .home-header h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-content {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 1.5rem;
+  }
+
+  .home-text {
+    max-width: 95%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin: 1rem auto;
+  }
+
+  .boy-image {
+    position: static; /* Make it part of the normal flow */
+    height: 50vh;
+    width: auto; /* Adjust width automatically */
+    margin-top: 2rem; /* Add some space above the image */
+    order: 1; /* Place image after text content */
+  }
+
+  .start-button, .about-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-header h1 {
+    font-size: 2.2rem !important;
+  }
+
+  .home-header h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .home-text {
+    font-size: 1rem;
+    padding: 0.8rem;
+    margin: 0.8rem auto;
+  }
+
+  .start-button, .about-link {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .boy-image {
+    height: 40vh;
+  }
 }

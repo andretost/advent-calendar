@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { useNavigate, Link } from 'react-router-dom';
+import Snowfall from '../components/Snowfall';
 
 function Home() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ function Home() {
 
   return (
     <div className="home-container" style={backgroundStyle}>
+      <Snowfall />
       <header className="home-header">
         <h1>Tareks Erste Weihnachten</h1>
         <h2>Ein Adventskalender von Silke Tost</h2>
