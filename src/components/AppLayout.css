@@ -22,4 +22,5 @@
   grid-column: 2 / 3; /* Occupies the second column */
   grid-row: 2 / 3; /* Below the header */
   overflow-y: auto; /* Allow main content to scroll */
+  /* border: 2px solid purple; Debug border */
 }

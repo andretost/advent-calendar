@@ -2,25 +2,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh; */
+  /* width: 100vw; */
   overflow: hidden;
-  padding: 2rem; /* Added padding here */
+  /* padding: 2rem; */
+  /* flex: 1; Removed as parent now controls flex */
 }
 
 .image-wrapper {
   position: relative;
-  display: inline-block;
+  display: inline-block; /* Revert to inline-block */
 }
 
 .calendar-background {
   display: block;
-  max-width: 100vw;
-  max-height: 100vh;
+  max-width: 100%; /* Scale to 100% of its wrapper */
+  max-height: 100%; /* Scale to 100% of its wrapper */
   height: auto;
   width: auto;
   object-fit: contain;
-  outline: 2px solid blue; /* debug */
+  /* outline: 2px solid blue; */
 }
 
 .overlay-layer {
@@ -29,7 +30,7 @@
   left: 0;
   z-index: 10;
   pointer-events: auto;
-  outline: 2px solid lime; /* debug */
+  /* outline: 2px solid lime; */
 }
 
 .day-wrapper {
