@@ -1,0 +1,25 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Fixed sidebar, flexible content */
+  grid-template-rows: auto 1fr; /* Flexible header, flexible content */
+  height: 100vh;
+  overflow: hidden; /* Prevent overall scrolling */
+}
+
+.app-header {
+  grid-column: 1 / -1; /* Spans across both columns */
+  /* Styles will be in Header.css */
+}
+
+.app-navbar {
+  grid-column: 1 / 2; /* Occupies the first column */
+  grid-row: 2 / 3; /* Below the header */
+  overflow-y: auto; /* Allow navigation to scroll if content is long */
+  /* Styles will be in NavBar.css */
+}
+
+.app-content {
+  grid-column: 2 / 3; /* Occupies the second column */
+  grid-row: 2 / 3; /* Below the header */
+  overflow-y: auto; /* Allow main content to scroll */
+}

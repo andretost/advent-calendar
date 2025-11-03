@@ -10,8 +10,6 @@ const About = () => {
 
   return (
     <div className="about-page" style={backgroundStyle}>
-      <h1>Über diesen Adventskalender</h1>
-
       <div className="about-content-wrapper">
         <section className="author-section">
           <img
