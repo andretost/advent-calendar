@@ -1,0 +1,37 @@
+.app-header {
+  grid-column: 1 / -1; /* Spans across both columns */
+  background-color: rgba(255, 255, 255, 0.85); /* Consistent with other content boxes */
+  color: black;
+  padding: 0.8rem 1.5rem; /* Reduced padding */
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-family: 'Mountains of Christmas', serif;
+  font-size: 2.8rem; /* Increased font size */
+  font-weight: bold;
+  color: #8b1a1a;
+  margin-bottom: 0.1rem; /* Reduced margin */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.app-header h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.3rem; /* Increased font size */
+  font-weight: 500;
+  color: #3b2f2f;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-header h2 {
+    font-size: 1rem;
+  }
+}

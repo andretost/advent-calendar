@@ -1,48 +1,30 @@
-.home-container {
-  min-height: 100vh;
-  padding: 2rem;
-  color: #fff;
-  font-family: 'Georgia', serif;
-  text-align: center;
-}
-
-.home-header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.home-header h2 {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.home-content {
+.home-content-only {
+  /* This wrapper is now directly within AppLayout's main content area */
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  /* align-items: center; */ /* Removed to fix cutoff issue */
+  height: 100%; /* Take full height of parent AppLayout main */
+  width: 100%; /* Take full width of parent AppLayout main */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+  padding-top: 1rem; /* Added padding-top to prevent content from touching header */
 }
 
-.home-text {
+.home-content-only > .home-text {
+  margin: 0 auto; /* Center content within the wrapper */
+  max-width: 800px;
   background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
   color: black;
   padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 800px;
   border-radius: 12px;
   border: 2px solid transparent; /* Subtle border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Reduced font size */
   line-height: 1.8; /* Increased line height for better readability */
   letter-spacing: 0.02em; /* Subtle letter spacing */
 }
 
-.home-text:hover {
+.home-content-only > .home-text:hover {
   border-color: #8b1a1a; /* Festive red border on hover */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Slightly more pronounced shadow */
 }
@@ -87,37 +69,10 @@
   pointer-events: none;
 }
 
-h1 {
-  font-family: 'Mountains of Christmas', serif;
-  font-size: 100px !important;        /* Increase to make it bigger */
-  font-weight: bold;      /* Ensures it's bold */
-  color: #8b1a1a;          /* Deep red, festive */
-  text-align: center;      /* Optional, centers the heading */
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem !important;
-  font-weight: 500;        /* Medium weight for a subtitle */
-  color: #3b2f2f;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .home-header h1 {
-    font-size: 4rem !important;
-  }
-
-  .home-header h2 {
-    font-size: 2.5rem !important;
-  }
-
-  .home-text {
+  .home-content-only > .home-text {
     max-width: 90%;
-    margin: 1.5rem auto;
   }
 
   .boy-image {
@@ -127,29 +82,15 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .home-container {
-    padding: 1rem;
-  }
-
-  .home-header h1 {
-    font-size: 3rem !important;
-    margin-bottom: 0.25rem;
-  }
-
-  .home-header h2 {
-    font-size: 1.8rem !important;
-    margin-bottom: 1.5rem;
-  }
-
-  .home-content {
+  .home-content-only {
     flex-direction: column; /* Stack elements vertically */
     gap: 1.5rem;
   }
 
-  .home-text {
+  .home-content-only > .home-text {
     max-width: 95%;
     padding: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem; /* Reduced font size */
     margin: 1rem auto;
   }
 
@@ -168,16 +109,8 @@ h2 {
 }
 
 @media (max-width: 480px) {
-  .home-header h1 {
-    font-size: 2.2rem !important;
-  }
-
-  .home-header h2 {
-    font-size: 1.4rem !important;
-  }
-
-  .home-text {
-    font-size: 1rem;
+  .home-content-only > .home-text {
+    font-size: 0.9rem; /* Further reduced font size */
     padding: 0.8rem;
     margin: 0.8rem auto;
   }

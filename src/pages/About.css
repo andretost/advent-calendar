@@ -4,6 +4,7 @@
   color: #fff; /* Default text color for the page */
   font-family: 'Georgia', serif;
   text-align: center;
+  padding-top: 1rem; /* Added top padding */
 }
 
 .about-page h1 {
