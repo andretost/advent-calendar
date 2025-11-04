@@ -1,47 +1,52 @@
 import React from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
 
 function Home() {
   const navigate = useNavigate();
+  const { language, translations } = useLanguage(); // Get translations from context
+
+  const getNestedTranslation = (obj, path) => {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+  };
+
+  const t = (key) => {
+    const translatedText = getNestedTranslation(translations[language], key);
+
+    if (translatedText === undefined || translatedText === null) {
+      console.warn(`Translation for key '${key}' in language '${language}' is undefined or null.`);
+      return key; // Fallback to key if translation is missing
+    }
+    return translatedText;
+  };
 
   return (
     <div className="home-content-only">
       <div className="home-text">
-        <p>
-          Willkommen! 
-          Dieses Buch erzählt die Geschichte von Tarek, einem jungen Flüchtling aus Syrien, den es mit seiner Familie nach Osnabrück verschlagen hat. Während der Adventszeit lernt er die Menschen in seinem Haus kennen, und gewinnt einen Einblick in ihre vorweihnachtlichen Gebräuche - und die damit verbundenen Rezepte!
-        </p>
-
-        <p>
-          Dabei ist es nicht wirklich ein Buch, sondern ein Adventskalender. Jeder Tag hat eine neue Geschichte, bis es schliesslich und endlich Weihnachten ist.
-        </p>
-
-        <p>
-          Wir hoffen, dass die Geschichte euch ermuntert, selbst ein wenig zu backen und zu kochen und zu basteln. Aber nicht vergessen: nur eine Seite pro Tag!
-        </p>
-
-        <p>Viel Spass!!!</p>
-
-        <p>Klicke unten, um den Adventskalender zu öffnen.</p>
+        <p>{t('home.p1')}</p>
+        <p>{t('home.p2')}</p>
+        <p>{t('home.p3')}</p>
+        <p>{t('home.p4')}</p>
+        <p>{t('home.p5')}</p>
 
         <div>
           <button onClick={() => navigate('/intro')} className="start-button">
-            Hier geht's los...
+            {t('home.button')}
           </button>
         </div>
 
-        <p>Klicke hier, um das Audio zu hören.</p>
+        <p>{t('home.audio_text')}</p>
 
         <div>
           <audio controls src={`${process.env.PUBLIC_URL}/audio/intro.mp3`}>
-            Your browser does not support the audio element.
+            {t('home.audio_source')}
           </audio>
         </div>
 
         <img
           src={`${process.env.PUBLIC_URL}/images/tarek.png`}
-          alt="Tarek"
+          alt={t('home.alt_image') || "Tarek"}
           className="boy-image"
         />
       </div> {/* Close home-text */}

@@ -1,32 +1,57 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
 import './About.css';
 
 const About = () => {
-  const backgroundStyle = {
-    backgroundImage: `url(${process.env.PUBLIC_URL}/images/background.png)`,
-    backgroundRepeat: 'repeat',
-    backgroundSize: 'auto',
+  const { language, translations } = useLanguage(); // Get translations from context
+
+  const getNestedTranslation = (obj, path) => {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
   };
 
+  const t = (key) => {
+    const translatedText = getNestedTranslation(translations[language], key);
+
+    if (translatedText === undefined || translatedText === null) {
+      console.warn(`Translation for key '${key}' in language '${language}' is undefined or null.`);
+      return key; // Fallback to key if translation is missing
+    }
+    return translatedText;
+  };
+
+  /* Removed backgroundStyle as it's now handled by AppLayout */
+
+  // Split the translated author paragraph to insert the bold name
+  const authorP1Text = t('about_page.author_p1');
+  const parts = authorP1Text.split(/<0>(.*?)<\/0>/);
+
   return (
-    <div className="about-page" style={backgroundStyle}>
+    <div className="about-page">
       <div className="about-content-wrapper">
         <section className="author-section">
           <img
             src={`${process.env.PUBLIC_URL}/images/silketost.jpg`}
-            alt="Author"
+            alt={t('about_page.alt_author_image') || "Author"}
             className="author-photo"
           />
           <div className="author-bio">
-            <h3>Über die Autorin</h3>
-            <p>Die Autorin <span style={{ fontWeight: 'bold' }}>Silke Tost</span> stammt ursprünglich aus der Region Osnabrück – daher spielt auch die Geschichte im Haus Nr. 24 dort. Heute lebt sie in Minnesota (USA). Ihre große Leidenschaft gilt dem Adventskalender: Fast das ganze Jahr über sammelt sie Ideen und kleine Schätze, um ihre Familie und Freunde mit liebevoll gestalteten Adventskalendern zu überraschen. Ebenso gerne steht sie in der Küche und entdeckt neue Geschmacksrichtungen. So war es nur naheliegend, ihre Geschichte rund um das Haus Nr. 24 mit kulinarischen Eindrücken aus unterschiedlichen Kulturen zu verbinden und daraus einen ganz besonderen Adventskalender entstehen zu lassen.</p>
+            <h3>{t('about_page.author_title')}</h3>
+            <p>
+              {parts.map((part, index) => {
+                if (index % 2 === 1) {
+                  return <span key={index} style={{ fontWeight: 'bold' }}>{part}</span>;
+                } else {
+                  return part;
+                }
+              })}
+            </p>
           </div>
         </section>
 
         <section className="contributors-section">
-          <h3>Umsetzung und Gestaltung</h3>
-          <p>Die Illustrationen der Texte und die Gestaltung und Realisierung dieser Webseite sind von Andre Tost.</p>
-          <p>Die Vorleserin heisst Nadja und ist KI-generiert.</p>
+          <h3>{t('about_page.contributors_title')}</h3>
+          <p>{t('about_page.contributors_p1')}</p>
+          <p>{t('about_page.contributors_p2')}</p>
         </section>
       </div>
     </div>
