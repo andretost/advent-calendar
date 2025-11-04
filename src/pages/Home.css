@@ -73,11 +73,18 @@
 @media (max-width: 1024px) {
   .home-content-only > .home-text {
     max-width: 90%;
+    margin: 0 auto; /* Center the text when image is hidden */
   }
 
   .boy-image {
-    height: 60vh;
-    right: 1rem;
+    display: none; /* Hide image on tablets and smaller to prevent overlap */
+  }
+}
+
+/* Show image only on larger screens where there's room */
+@media (min-width: 1025px) {
+  .boy-image {
+    display: block;
   }
 }
 
@@ -94,13 +101,7 @@
     margin: 1rem auto;
   }
 
-  .boy-image {
-    position: static; /* Make it part of the normal flow */
-    height: 50vh;
-    width: auto; /* Adjust width automatically */
-    margin-top: 2rem; /* Add some space above the image */
-    order: 1; /* Place image after text content */
-  }
+  /* Image is already hidden by the 1024px breakpoint */
 
   .start-button, .about-link {
     padding: 0.8rem 1.5rem;
@@ -120,7 +121,5 @@
     font-size: 1rem;
   }
 
-  .boy-image {
-    height: 40vh;
-  }
+  /* Image is already hidden by the 1024px breakpoint */
 }
