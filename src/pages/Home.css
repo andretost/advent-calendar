@@ -15,6 +15,7 @@
   background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better text readability */
   color: #2c2c2c; /* Softer black for less eye strain */
   padding: 2.5rem;
+  padding-bottom: 3rem; /* Extra bottom padding to ensure button stays inside */
   border-radius: 12px;
   border: 2px solid transparent; /* Subtle border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -22,6 +23,7 @@
   font-size: 1.25rem; /* Larger, more readable */
   line-height: 1.85; /* Excellent for reading longer text */
   letter-spacing: 0.01em; /* Subtle letter spacing */
+  min-height: fit-content; /* Ensure container expands to fit all content */
 }
 
 .home-content-only > .home-text p {
@@ -40,7 +42,8 @@
   color: white;
   border: none;
   padding: 1rem 2rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem; /* Reduced margin to bring button closer */
+  margin-bottom: 1.5rem; /* Add bottom margin for spacing from audio text */
   font-size: 1.2rem;
   cursor: pointer;
   border-radius: 8px;
