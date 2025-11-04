@@ -30,8 +30,17 @@ const NavBar = () => {
         <li><Link to="/about">{t('navbar.about')}</Link></li>
       </ul>
       <div className="language-switcher">
-        <button onClick={() => setLanguage('de')} className={language === 'de' ? 'active' : ''}>DE</button>
-        <button onClick={() => setLanguage('en')} className={language === 'en' ? 'active' : ''}>EN</button>
+        <button onClick={() => setLanguage('de')} className={language === 'de' ? 'active' : ''}>
+          <img src={`${process.env.PUBLIC_URL}/images/de_flag.png`} alt="Deutsch" className="flag-icon" />
+          <span>Deutsch</span>
+        </button>
+        <button onClick={() => setLanguage('en')} className={language === 'en' ? 'active' : ''}>
+          <img src={`${process.env.PUBLIC_URL}/images/en_flag.png`} alt="English" className="flag-icon" />
+          <span>English</span>
+        </button>
+      </div>
+      <div className="app-footer-copyright">
+        &copy; Andre Tost 2025
       </div>
     </nav>
   );
