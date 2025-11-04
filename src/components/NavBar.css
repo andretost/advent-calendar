@@ -84,6 +84,20 @@
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.3s ease;
+  display: flex; /* Use flexbox to align flag and text */
+  flex-direction: column; /* Stack flag and text vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  gap: 5px; /* Space between flag and text */
+}
+
+.language-switcher .flag-icon {
+  width: 30px; /* Adjust flag size as needed */
+  height: auto;
+}
+
+.language-switcher button span {
+  font-size: 0.8rem; /* Adjust text size as needed */
 }
 
 .language-switcher button:hover {
@@ -104,7 +118,23 @@
     bottom: 0.5rem;
     right: 0.5rem;
     background-color: rgba(255, 255, 255, 0.85); /* Match header/navbar background */
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: row; /* For small screens, display flags horizontally */
+  }
+
+  .language-switcher button {
+    padding: 0.3rem 0.6rem; /* Adjust padding for smaller buttons */
+    flex-direction: row; /* For small screens, display flag and text horizontally */
+    gap: 3px;
+  }
+
+  .language-switcher .flag-icon {
+    width: 20px; /* Smaller flag on small screens */
+  }
+
+  .language-switcher button span {
+    font-size: 0.7rem; /* Smaller text on small screens */
   }
 }
