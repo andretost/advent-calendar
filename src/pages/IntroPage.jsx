@@ -25,6 +25,8 @@ const IntroPage = () => {
 
   /* Removed backgroundStyle as it's now handled by AppLayout */
 
+  const introHouseAudioSrc = language === 'de' ? 'audio/haus-de.mp3' : 'audio/haus-en.mp3';
+
   return (
     <div className="intro-page">
       <img
@@ -37,8 +39,8 @@ const IntroPage = () => {
         <p>{t('intro_page.p1')}</p>
         <p>{t('intro_page.p2')}</p>
         <p>{t('intro_page.p3')}</p>
-        <audio controls>
-          <source src={`${process.env.PUBLIC_URL}/audio/haus.mp3`} type="audio/mpeg" />
+        <audio controls key={language}>
+          <source src={`${process.env.PUBLIC_URL}/${introHouseAudioSrc}`} type="audio/mpeg" />
           {t('intro_page.audio_source')}
         </audio>
       </div>

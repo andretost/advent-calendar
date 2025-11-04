@@ -107,6 +107,8 @@ const CalendarImage = ({ onSelectDay }) => {
     const displayedText = language === 'en' && content.en_text ? content.en_text : content.text;
     const displayedLongText = language === 'en' && content.en_longText ? content.en_longText : content.longText;
 
+    const dayAudioSrc = language === 'de' ? content.audio : content.en_audio; // Assuming en_audio field in days.json
+
     return (
       <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
         <button onClick={closeModal} style={{ float: 'right' }}>{t('modal.close')}</button>
@@ -147,7 +149,7 @@ const CalendarImage = ({ onSelectDay }) => {
               ))}
             </p>
           )}
-          <audio controls src={`${process.env.PUBLIC_URL}/${content.audio}`} style={{ marginTop: '10px' }} />
+          <audio controls key={language} src={`${process.env.PUBLIC_URL}/${dayAudioSrc}`} style={{ marginTop: '10px' }} />
         </div>
       </div>
     );
