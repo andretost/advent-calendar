@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Modal from 'react-modal';
+import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
 import days from '../data/days.json';
 import './CalendarImage.css';
 
@@ -41,11 +42,28 @@ const CalendarImage = ({ onSelectDay }) => {
   const [selectedDay, setSelectedDay] = useState(null);
   const [openedDays, setOpenedDays] = useState([]);
   const [showModalImage, setShowModalImage] = useState(true);
+  const { language, translations } = useLanguage(); // Get translations from context
 
-  // 1. Handle image load (first run)
+  const getNestedTranslation = (obj, path) => {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+  };
+
+  const t = (key, options) => {
+    let text = getNestedTranslation(translations[language], key);
+
+    if (text === undefined || text === null) {
+      console.warn(`Translation for key '${key}' in language '${language}' is undefined or null.`);
+      return key; // Fallback to key if translation is missing
+    }
+
+    if (options && options.dayNumber) {
+      text = text.replace('{{dayNumber}}', options.dayNumber);
+    }
+    return text;
+  }; // Simple translation function, supporting dayNumber replacement
+
   useEffect(() => {
     const image = imageRef.current;
-
     const updateSize = () => {
       if (image) {
         const rect = image.getBoundingClientRect();
@@ -53,18 +71,14 @@ const CalendarImage = ({ onSelectDay }) => {
         setImageBox(rect);
       }
     };
-
     if (image && image.complete) {
-      // If image already loaded (e.g., from cache)
       updateSize();
     } else if (image) {
-      // If image still loading
       image.addEventListener('load', updateSize);
       return () => image.removeEventListener('load', updateSize);
     }
-  }, []); // Runs only once on mount
+  }, []);
 
-  // 2. Handle browser window resizing
   useEffect(() => {
     const updateSize = () => {
       if (imageRef.current) {
@@ -72,14 +86,13 @@ const CalendarImage = ({ onSelectDay }) => {
         setImageBox(rect);
       }
     };
-
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
-  }, []); // Also only once, with cleanup
+  }, []);
 
   const closeModal = () => {
     setSelectedDay(null);
-    setShowModalImage(true); // Reset to show image when modal closes
+    setShowModalImage(true);
   };
 
   const handleModalFlip = () => {
@@ -89,12 +102,15 @@ const CalendarImage = ({ onSelectDay }) => {
   const renderModalContent = () => {
     if (!selectedDay) return null;
     const content = days[selectedDay];
-    if (!content) return <p>No content found for day {selectedDay}.</p>;
+    if (!content) return <p>{t('calendar_page.no_content', { day: selectedDay })}</p>;
+
+    const displayedText = language === 'en' && content.en_text ? content.en_text : content.text;
+    const displayedLongText = language === 'en' && content.en_longText ? content.en_longText : content.longText;
 
     return (
       <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <button onClick={closeModal} style={{ float: 'right' }}>✕</button>
-        <h2>{getGermanDate(selectedDay)}</h2>
+        <button onClick={closeModal} style={{ float: 'right' }}>{t('modal.close')}</button>
+        <h2>{t('calendar_page.day_date', { dayNumber: parseInt(selectedDay, 10) })}</h2>
         <div style={{ flexGrow: 1, overflowY: 'auto' }}>
           {showModalImage ? (
             <div style={{ position: 'relative' }}>
@@ -108,18 +124,18 @@ const CalendarImage = ({ onSelectDay }) => {
                   textAlign: 'center',
                 }}
               >
-                {content.text}
+                {displayedText}
               </p>
               <img
                 src={`${process.env.PUBLIC_URL}/${content.image}`}
-                alt={`Day ${selectedDay}`}
+                alt={t('calendar_page.alt_day_image', { day: selectedDay })}
                 style={{ maxWidth: '100%', maxHeight: 'calc(100% - 180px)', objectFit: 'contain', cursor: 'pointer' }}
                 onClick={handleModalFlip}
               />
             </div>
           ) : (
             <p onClick={handleModalFlip} style={{ cursor: 'pointer' }}>
-              {content.longText.split('\n\n').map((paragraph, pIdx) => (
+              {displayedLongText.split('\n\n').map((paragraph, pIdx) => (
                 <p key={pIdx} style={{ marginBottom: '1em' }}>
                   {paragraph.split('\n').map((line, lIdx) => (
                     <React.Fragment key={lIdx}>
@@ -142,7 +158,7 @@ const CalendarImage = ({ onSelectDay }) => {
       <div className="image-wrapper">
         <img
           src={`${process.env.PUBLIC_URL}/images/house.png`}
-          alt="Advent calendar"
+          alt={t('calendar_page.alt_calendar_image')}
           ref={imageRef}
           className="calendar-background"
         />
@@ -174,7 +190,7 @@ const CalendarImage = ({ onSelectDay }) => {
                   {openedDays.includes(day) && (
                     <img
                       src={`${process.env.PUBLIC_URL}/images/star.png`}
-                      alt="Opened"
+                      alt={t('calendar_page.alt_star_overlay')}
                       className="star-overlay"
                     />
                   )}
@@ -188,7 +204,7 @@ const CalendarImage = ({ onSelectDay }) => {
       <Modal
         isOpen={!!selectedDay}
         onRequestClose={closeModal}
-        contentLabel="Day Content"
+        contentLabel={t('modal.day_content_label')}
         style={{
           content: {
             maxWidth: '800px',
@@ -209,11 +225,6 @@ const CalendarImage = ({ onSelectDay }) => {
       </Modal>
     </div>
   );
-};
-
-const getGermanDate = (dayString) => {
-  const dayNumber = parseInt(dayString, 10); // "01" -> 1
-  return `${dayNumber}. Dezember`;
 };
 
 export default CalendarImage;

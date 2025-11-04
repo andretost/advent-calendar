@@ -2,9 +2,18 @@
   grid-column: 1 / -1; /* Spans across both columns */
   background-color: rgba(255, 255, 255, 0.85); /* Consistent with other content boxes */
   color: black;
-  padding: 0.8rem 1.5rem; /* Reduced padding */
-  text-align: center;
+  padding: 0.5rem 1.5rem; /* Adjusted general padding */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Make it a flex container */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Center horizontally */
+}
+
+.header-image {
+  height: 100px; /* Increased size a touch more */
+  width: auto;
+  object-fit: contain;
+  margin-right: 1.5rem; /* Space between image and text */
 }
 
 .app-header h1 {
