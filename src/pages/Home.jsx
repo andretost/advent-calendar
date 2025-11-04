@@ -21,6 +21,8 @@ function Home() {
     return translatedText;
   };
 
+  const introAudioSrc = language === 'de' ? 'audio/intro-de.mp3' : 'audio/intro-en.mp3';
+
   return (
     <div className="home-content-only">
       <div className="home-text">
@@ -39,7 +41,7 @@ function Home() {
         <p>{t('home.audio_text')}</p>
 
         <div>
-          <audio controls src={`${process.env.PUBLIC_URL}/audio/intro.mp3`}>
+          <audio controls key={language} src={`${process.env.PUBLIC_URL}/${introAudioSrc}`}>
             {t('home.audio_source')}
           </audio>
         </div>
