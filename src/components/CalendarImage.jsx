@@ -118,12 +118,14 @@ const CalendarImage = ({ onSelectDay }) => {
             <div style={{ position: 'relative' }}>
               <p
                 style={{
-                  fontFamily: '"Arial Black", Gadget, sans-serif',
-                  fontSize: '1.5em',
-                  fontWeight: 'bold',
-                  color: '#333',
-                  marginBottom: '10px',
+                  fontFamily: '"Crimson Text", Georgia, serif',
+                  fontSize: '1.7rem',
+                  fontWeight: '700',
+                  color: '#8b1a1a',
+                  marginBottom: '1.5rem',
                   textAlign: 'center',
+                  lineHeight: '1.4',
+                  letterSpacing: '0.02em',
                 }}
               >
                 {displayedText}
@@ -136,9 +138,20 @@ const CalendarImage = ({ onSelectDay }) => {
               />
             </div>
           ) : (
-            <p onClick={handleModalFlip} style={{ cursor: 'pointer' }}>
+            <div onClick={handleModalFlip} style={{ 
+              cursor: 'pointer',
+              fontFamily: '"Crimson Text", Georgia, serif',
+              fontSize: '1.15rem',
+              lineHeight: '1.8',
+              color: '#2c2c2c',
+              textAlign: 'justify',
+              letterSpacing: '0.01em',
+            }}>
               {displayedLongText.split('\n\n').map((paragraph, pIdx) => (
-                <p key={pIdx} style={{ marginBottom: '1em' }}>
+                <p key={pIdx} style={{ 
+                  marginBottom: '1.3em',
+                  textIndent: '1.5em',
+                }}>
                   {paragraph.split('\n').map((line, lIdx) => (
                     <React.Fragment key={lIdx}>
                       {line}
@@ -147,7 +160,7 @@ const CalendarImage = ({ onSelectDay }) => {
                   ))}
                 </p>
               ))}
-            </p>
+            </div>
           )}
           <audio controls key={language} src={`${process.env.PUBLIC_URL}/${dayAudioSrc}`} style={{ marginTop: '10px' }} />
         </div>

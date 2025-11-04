@@ -18,7 +18,7 @@
 
 .app-header h1 {
   font-family: 'Mountains of Christmas', serif;
-  font-size: 2.8rem; /* Increased font size */
+  font-size: 3.5rem; /* Increased font size for more prominence */
   font-weight: bold;
   color: #8b1a1a;
   margin-bottom: 0.1rem; /* Reduced margin */
@@ -26,7 +26,6 @@
 }
 
 .app-header h2 {
-  font-family: 'Great Vibes', cursive;
   font-size: 1.3rem; /* Increased font size */
   font-weight: 500;
   color: #3b2f2f;
@@ -37,7 +36,7 @@
 /* Responsive adjustments for header */
 @media (max-width: 768px) {
   .app-header h1 {
-    font-size: 2rem;
+    font-size: 2.3rem; /* Slightly larger on mobile too */
   }
 
   .app-header h2 {

@@ -12,16 +12,22 @@
 .home-content-only > .home-text {
   margin: 0 auto; /* Center content within the wrapper */
   max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
-  color: black;
-  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better text readability */
+  color: #2c2c2c; /* Softer black for less eye strain */
+  padding: 2.5rem;
   border-radius: 12px;
   border: 2px solid transparent; /* Subtle border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.1rem; /* Reduced font size */
-  line-height: 1.8; /* Increased line height for better readability */
-  letter-spacing: 0.02em; /* Subtle letter spacing */
+  font-size: 1.25rem; /* Larger, more readable */
+  line-height: 1.85; /* Excellent for reading longer text */
+  letter-spacing: 0.01em; /* Subtle letter spacing */
+}
+
+.home-content-only > .home-text p {
+  margin-bottom: 1.3em; /* Better paragraph spacing */
+  text-align: justify; /* Justified text for a book-like feel */
+  text-justify: inter-word;
 }
 
 .home-content-only > .home-text:hover {
@@ -96,9 +102,14 @@
 
   .home-content-only > .home-text {
     max-width: 95%;
-    padding: 1rem;
-    font-size: 1rem; /* Reduced font size */
+    padding: 1.8rem;
+    font-size: 1.15rem; /* Still readable on mobile */
     margin: 1rem auto;
+    line-height: 1.75;
+  }
+
+  .home-content-only > .home-text p {
+    margin-bottom: 1.2em;
   }
 
   /* Image is already hidden by the 1024px breakpoint */
@@ -111,9 +122,14 @@
 
 @media (max-width: 480px) {
   .home-content-only > .home-text {
-    font-size: 0.9rem; /* Further reduced font size */
-    padding: 0.8rem;
+    font-size: 1.05rem; /* Keep readable on small screens */
+    padding: 1.5rem;
     margin: 0.8rem auto;
+    line-height: 1.7;
+  }
+
+  .home-content-only > .home-text p {
+    margin-bottom: 1.1em;
   }
 
   .start-button, .about-link {

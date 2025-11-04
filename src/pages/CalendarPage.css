@@ -49,8 +49,8 @@
 }
 
 .calendar-info-box h3 {
-  font-family: 'Great Vibes', cursive;
   font-size: 1.5rem;
+  font-weight: 600;
   color: #3b2f2f;
   margin-bottom: 1rem;
   text-align: center;
