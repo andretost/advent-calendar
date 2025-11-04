@@ -22,12 +22,13 @@ export default function DayModal({ dayData, onClose }) {
   if (!dayData) return null;
 
   const displayedText = language === 'en' && dayData.en_text ? dayData.en_text : dayData.text;
+  const audioSrc = language === 'en' && dayData.en_audio ? dayData.en_audio : dayData.audio;
 
   return (
     <div className="modal">
       <img src={`${process.env.PUBLIC_URL}/${dayData.image}`} alt="Illustration" />
       <p>{displayedText}</p>
-      <audio controls src={dayData.audio}></audio>
+      <audio controls src={audioSrc}></audio>
       <button onClick={onClose}>{t('modal.close')}</button>
     </div>
   );

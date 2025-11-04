@@ -106,7 +106,7 @@ const translations = {
       info_box_p1: "You can open the doors by clicking on the numbers for the respective day. When you click on a number, the content of the door will be displayed.",
       info_box_p2: "In the window for each day, you can switch between the image and the text by clicking on the image or the text.",
       info_box_p3: "The days you have already clicked will be marked with a star.",
-      day_date: "{{dayNumber}}. December",
+      day_date: "December {{dayNumber}}",
       no_content: "No content found for day {{day}}.",
       alt_day_image: "Day {{day}}",
       alt_calendar_image: "Advent calendar",
