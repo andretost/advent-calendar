@@ -15,15 +15,15 @@
 }
 
 .about-content-wrapper {
-  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent white */
-  color: black;
-  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better text readability */
+  color: #2c2c2c; /* Softer black for less eye strain */
+  padding: 2.5rem;
   margin: 2rem auto;
   max-width: 800px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.8;
   text-align: left; /* Align text left within the content box */
 }
 
@@ -46,16 +46,17 @@
 }
 
 .author-bio h3 {
-  font-family: 'Great Vibes', cursive;
   font-size: 2rem;
+  font-weight: 600;
   color: #3b2f2f; /* Darker neutral */
   margin-bottom: 1rem;
   text-align: center; /* Center the author heading */
 }
 
 .author-bio p {
-  margin-bottom: 1em;
+  margin-bottom: 1.3em;
   text-align: justify;
+  line-height: 1.8;
 }
 
 .contributors-section {
@@ -63,8 +64,8 @@
 }
 
 .contributors-section h3 {
-  font-family: 'Great Vibes', cursive;
   font-size: 1.5rem;
+  font-weight: 600;
   color: #3b2f2f;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -88,4 +89,5 @@
   font-size: 0.95em;
   color: #555;
   text-align: justify;
+  line-height: 1.75;
 }

@@ -24,12 +24,19 @@
 }
 
 .intro-text-box {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
   margin: 1rem auto;
   max-width: 800px;
-  border-radius: 8px;
-  color: black;
+  border-radius: 12px;
+  color: #2c2c2c;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.intro-text-box p {
+  margin-bottom: 1.3em;
+  text-align: justify;
 }
 
 .intro-button {
