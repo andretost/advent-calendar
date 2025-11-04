@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/advent-calendar/static/css/main.34fbc9c4.css",
-    "main.js": "/advent-calendar/static/js/main.58c72252.js",
+    "main.js": "/advent-calendar/static/js/main.8417bc1b.js",
     "static/js/453.6af305f1.chunk.js": "/advent-calendar/static/js/453.6af305f1.chunk.js",
     "index.html": "/advent-calendar/index.html",
     "main.34fbc9c4.css.map": "/advent-calendar/static/css/main.34fbc9c4.css.map",
-    "main.58c72252.js.map": "/advent-calendar/static/js/main.58c72252.js.map",
+    "main.8417bc1b.js.map": "/advent-calendar/static/js/main.8417bc1b.js.map",
     "453.6af305f1.chunk.js.map": "/advent-calendar/static/js/453.6af305f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.34fbc9c4.css",
-    "static/js/main.58c72252.js"
+    "static/js/main.8417bc1b.js"
   ]
 }
