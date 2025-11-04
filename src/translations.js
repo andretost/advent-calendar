@@ -36,7 +36,7 @@ const translations = {
       author_p1: "Die Autorin <0>Silke Tost</0> stammt ursprünglich aus der Region Osnabrück – daher spielt auch die Geschichte im Haus Nr. 24 dort. Heute lebt sie in Minnesota (USA). Ihre große Leidenschaft gilt dem Adventskalender: Fast das ganze Jahr über sammelt sie Ideen und kleine Schätze, um ihre Familie und Freunde mit liebevoll gestalteten Adventskalendern zu überraschen. Ebenso gerne steht sie in der Küche und entdeckt neue Geschmacksrichtungen. So war es nur naheliegend, ihre Geschichte rund um das Haus Nr. 24 mit kulinarischen Eindrücken aus unterschiedlichen Kulturen zu verbinden und daraus einen ganz besonderen Adventskalender entstehen zu lassen.",
       contributors_title: "Umsetzung und Gestaltung",
       contributors_p1: "Die Illustrationen der Texte und die Gestaltung und Realisierung dieser Webseite sind von Andre Tost.",
-      contributors_p2: "Die Vorleserin heisst Nadja und ist KI-generiert."
+      contributors_p2: "Die deutschsprachige Vorleserin heisst Nadja und die englischsprachige Vorleserin heisst Jessa. Beide sind KI-generiert."
     },
     recipes_page: {
       title: "Rezepte",
@@ -95,7 +95,7 @@ const translations = {
       author_p1: "The author <0>Silke Tost</0> originally comes from the Osnabrück region – hence the story also takes place in House No. 24 there. Today she lives in Minnesota (USA). Her great passion is the Advent calendar: Almost all year round she collects ideas and small treasures to surprise her family and friends with lovingly designed Advent calendars. She also loves to be in the kitchen and discover new flavors. So it was only natural to combine her story around House No. 24 with culinary impressions from different cultures and to create a very special Advent calendar.",
       contributors_title: "Implementation and Design",
       contributors_p1: "The illustrations of the texts and the design and realization of this website are by Andre Tost.",
-      contributors_p2: "The narrator is Nadja and is AI-generated."
+      contributors_p2: "The German language narrator is Nadja and the English language narrator is Jessa. Both are AI-generated."
     },
     recipes_page: {
       title: "Recipes",
