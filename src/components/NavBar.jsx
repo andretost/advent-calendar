@@ -39,6 +39,9 @@ const NavBar = () => {
           <span>English</span>
         </button>
       </div>
+      <div className="app-footer-copyright">
+        &copy; Andre Tost 2025
+      </div>
     </nav>
   );
 };
