@@ -36,6 +36,13 @@
   background-color: rgba(244, 67, 54, 0.1); /* Light red background on hover */
 }
 
+.app-navbar a.active {
+  color: #8b1a1a; /* Festive red for active page */
+  background-color: rgba(139, 26, 26, 0.15); /* Slightly darker red background */
+  font-weight: 600; /* Make it bold */
+  border-left: 4px solid #8b1a1a; /* Add a left border indicator */
+}
+
 /* Responsive adjustments for navigation */
 @media (max-width: 768px) {
   .app-navbar {
@@ -64,6 +71,11 @@
 
   .app-navbar a:hover {
     transform: none;
+  }
+
+  .app-navbar a.active {
+    border-left: none; /* Remove left border on mobile */
+    border-bottom: 3px solid #8b1a1a; /* Add bottom border instead */
   }
 }
 
