@@ -1,5 +1,5 @@
 .app-navbar {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
   padding: 1.5rem 1rem;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -36,34 +36,40 @@
   background-color: rgba(244, 67, 54, 0.1); /* Light red background on hover */
 }
 
+.app-navbar a.active {
+  color: #8b1a1a; /* Festive red for active page */
+  background-color: rgba(139, 26, 26, 0.15); /* Slightly darker red background */
+  font-weight: 600; /* Make it bold */
+  border-left: 4px solid #8b1a1a; /* Add a left border indicator */
+}
+
 /* Responsive adjustments for navigation */
 @media (max-width: 768px) {
   .app-navbar {
-    grid-column: 1 / -1; /* Spans full width at top */
-    grid-row: 1 / 2; /* Moves to header row */
-    flex-direction: row; /* Horizontal layout */
-    justify-content: space-around;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.8rem;
   }
 
   .app-navbar ul {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    flex-direction: column; /* Keep vertical layout */
   }
 
   .app-navbar li {
-    margin-bottom: 0;
+    margin-bottom: 0.8rem;
   }
 
   .app-navbar a {
-    font-size: 0.9rem;
-    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
     transform: none; /* Remove slide effect on small screens */
   }
 
   .app-navbar a:hover {
     transform: none;
+  }
+
+  .app-navbar a.active {
+    /* Keep the left border on mobile too */
   }
 }
 
@@ -113,31 +119,25 @@
 
 @media (max-width: 768px) {
   .language-switcher {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.85); /* Match header/navbar background */
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    flex-direction: row; /* For small screens, display flags horizontally */
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-direction: row; /* Display flags horizontally */
+    gap: 8px;
   }
 
   .language-switcher button {
-    padding: 0.3rem 0.6rem; /* Adjust padding for smaller buttons */
-    flex-direction: row; /* For small screens, display flag and text horizontally */
-    gap: 3px;
+    padding: 0.4rem 0.7rem; /* Adjust padding for smaller buttons */
+    flex-direction: row; /* Display flag and text horizontally */
+    gap: 5px;
   }
 
   .language-switcher .flag-icon {
-    width: 20px; /* Smaller flag on small screens */
+    width: 24px; /* Slightly smaller flag on small screens */
   }
 
   .language-switcher button span {
-    font-size: 0.7rem; /* Smaller text on small screens */
+    font-size: 0.75rem; /* Smaller text on small screens */
   }
 }
 
@@ -152,6 +152,7 @@
 
 @media (max-width: 768px) {
   .app-footer-copyright {
-    display: none; /* Hide copyright on small screens in horizontal layout */
+    font-size: 0.75rem;
+    padding-top: 0.8rem;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
 import './NavBar.css';
 
@@ -23,11 +23,11 @@ const NavBar = () => {
   return (
     <nav className="app-navbar">
       <ul>
-        <li><Link to="/">{t('navbar.home')}</Link></li>
-        <li><Link to="/intro">{t('navbar.intro')}</Link></li>
-        <li><Link to="/calendar">{t('navbar.calendar')}</Link></li>
-        <li><Link to="/recipes">{t('navbar.recipes')}</Link></li>
-        <li><Link to="/about">{t('navbar.about')}</Link></li>
+        <li><NavLink to="/" end>{t('navbar.home')}</NavLink></li>
+        <li><NavLink to="/intro">{t('navbar.intro')}</NavLink></li>
+        <li><NavLink to="/calendar">{t('navbar.calendar')}</NavLink></li>
+        <li><NavLink to="/recipes">{t('navbar.recipes')}</NavLink></li>
+        <li><NavLink to="/about">{t('navbar.about')}</NavLink></li>
       </ul>
       <div className="language-switcher">
         <button onClick={() => setLanguage('de')} className={language === 'de' ? 'active' : ''}>
