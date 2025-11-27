@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ onLogout }) => {
   const { language, setLanguage, translations } = useLanguage(); // Get translations from context
 
   const getNestedTranslation = (obj, path) => {
@@ -18,6 +18,12 @@ const NavBar = () => {
       return key; // Fallback to key if translation is missing
     }
     return translatedText;
+  };
+
+  const handleLogout = () => {
+    if (window.confirm(language === 'de' ? 'Möchten Sie sich wirklich abmelden?' : 'Are you sure you want to log out?')) {
+      onLogout();
+    }
   };
 
   return (
@@ -39,6 +45,9 @@ const NavBar = () => {
           <span>English</span>
         </button>
       </div>
+      <button className="logout-button" onClick={handleLogout}>
+        {language === 'de' ? 'Abmelden' : 'Logout'}
+      </button>
       <div className="app-footer-copyright">
         &copy; Andre Tost 2025
       </div>

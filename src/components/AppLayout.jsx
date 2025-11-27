@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import Snowfall from './Snowfall'; // Assuming snowfall is part of the layout
 import './AppLayout.css';
 
-const AppLayout = ({ children }) => {
+const AppLayout = ({ children, onLogout }) => {
   const backgroundStyle = {
     backgroundImage: `url(${process.env.PUBLIC_URL}/images/background.png)`,
     backgroundRepeat: 'repeat',
@@ -15,7 +15,7 @@ const AppLayout = ({ children }) => {
     <div className="app-layout" style={backgroundStyle}>
       <Snowfall />
       <Header />
-      <NavBar />
+      <NavBar onLogout={onLogout} />
       <main className="app-content">
         {children}
       </main>
