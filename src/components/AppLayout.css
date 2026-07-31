@@ -1,26 +1,57 @@
 .app-layout {
+  position: relative;
   display: grid;
-  grid-template-columns: 200px 1fr; /* Fixed sidebar, flexible content */
-  grid-template-rows: auto 1fr; /* Flexible header, flexible content */
+  grid-template-columns: var(--sidebar-width) 1fr;
+  grid-template-rows: 1fr;
   height: 100vh;
-  overflow: hidden; /* Prevent overall scrolling */
-}
-
-.app-header {
-  grid-column: 1 / -1; /* Spans across both columns */
-  /* Styles will be in Header.css */
+  overflow: hidden;
+  background-color: #1a1410;
 }
 
 .app-navbar {
-  grid-column: 1 / 2; /* Occupies the first column */
-  grid-row: 2 / 3; /* Below the header */
-  overflow-y: auto; /* Allow navigation to scroll if content is long */
-  /* Styles will be in NavBar.css */
+  grid-column: 1 / 2;
+  grid-row: 1;
+  overflow-y: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .app-content {
-  grid-column: 2 / 3; /* Occupies the second column */
-  grid-row: 2 / 3; /* Below the header */
-  overflow-y: auto; /* Allow main content to scroll */
-  /* border: 2px solid purple; Debug border */
+  grid-column: 2 / 3;
+  grid-row: 1;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.app-layout--immersive {
+  display: block;
+  background: #120c0a;
+}
+
+.app-layout--immersive .app-content {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .app-layout--content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .app-layout--content .app-navbar {
+    grid-column: 1;
+    grid-row: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .app-layout--content .app-content {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }

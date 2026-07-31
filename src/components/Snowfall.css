@@ -1,80 +1,46 @@
 .snowfall-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   overflow: hidden;
-  pointer-events: none; /* Allows clicks to pass through */
-  z-index: 1; /* Ensure it's above background but below content */
+  pointer-events: none;
+}
+
+.snowfall-container--back {
+  z-index: 1;
+}
+
+.snowfall-container--front {
+  z-index: 6;
 }
 
 .snowflake {
   position: absolute;
-  background-color: #fff; /* White snowflake */
+  top: -5vh;
+  background: radial-gradient(circle at 30% 30%, #fff, rgba(255, 255, 255, 0.75));
   border-radius: 50%;
-  opacity: 0.8;
   animation-name: snowfall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  z-index: 1; /* Ensure it's above background but below content */
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.35);
+}
+
+.snowfall-container--front .snowflake {
+  filter: blur(0.2px);
 }
 
 @keyframes snowfall {
   0% {
-    transform: translateY(-10vh) translateX(0);
+    transform: translateY(-8vh) translateX(0);
     opacity: 0;
   }
-  10% {
-    opacity: 0.8;
+  8% {
+    opacity: inherit;
   }
-  90% {
-    opacity: 0.8;
+  92% {
+    opacity: inherit;
   }
   100% {
-    transform: translateY(100vh) translateX(5vw); /* Fall down and slightly to the right */
+    transform: translateY(105vh) translateX(var(--drift, 4vw));
     opacity: 0;
   }
-}
-
-/* Generate varying snowflake sizes, speeds, and starting positions */
-/* This is a simplified example; a real one would be more dynamic with JS */
-.snowflake:nth-child(even) {
-  width: 5px;
-  height: 5px;
-  animation-duration: 10s;
-  animation-delay: 0s;
-  left: 10%;
-}
-
-.snowflake:nth-child(odd) {
-  width: 8px;
-  height: 8px;
-  animation-duration: 15s;
-  animation-delay: 5s;
-  left: 50%;
-}
-
-.snowflake:nth-child(3n) {
-  width: 3px;
-  height: 3px;
-  animation-duration: 7s;
-  animation-delay: 2s;
-  left: 70%;
-}
-
-.snowflake:nth-child(5n) {
-  width: 6px;
-  height: 6px;
-  animation-duration: 12s;
-  animation-delay: 8s;
-  left: 30%;
-}
-
-.snowflake:nth-child(7n) {
-  width: 4px;
-  height: 4px;
-  animation-duration: 9s;
-  animation-delay: 4s;
-  left: 90%;
 }

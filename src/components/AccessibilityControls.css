@@ -1,0 +1,92 @@
+.a11y-controls {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 230, 200, 0.14);
+}
+
+.a11y-controls-toggle {
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 244, 230, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.a11y-controls-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.a11y-controls-toggle::after {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  opacity: 0.75;
+  margin-top: -0.15rem;
+}
+
+.a11y-controls[open] > .a11y-controls-toggle::after {
+  transform: rotate(225deg);
+  margin-top: 0.15rem;
+}
+
+.a11y-controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+}
+
+.a11y-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: rgba(255, 244, 230, 0.88);
+}
+
+.a11y-row select {
+  appearance: none;
+  border: 1px solid rgba(255, 230, 200, 0.28);
+  background: rgba(255, 248, 240, 0.1);
+  color: #fff6ea;
+  border-radius: 8px;
+  padding: 0.4rem 0.55rem;
+  font-family: inherit;
+}
+
+.a11y-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: rgba(255, 244, 230, 0.88);
+  cursor: pointer;
+}
+
+.a11y-check input {
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .a11y-controls {
+    width: 100%;
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .a11y-controls-toggle {
+    padding: 0.35rem 0;
+  }
+}

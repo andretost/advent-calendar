@@ -1,0 +1,50 @@
+.story-audio {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(139, 26, 26, 0.06);
+  border: 1px solid rgba(139, 26, 26, 0.14);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem 0.45rem 0.45rem;
+}
+
+.story-audio-play {
+  appearance: none;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-festive-red);
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.story-audio-play:hover {
+  background: var(--color-festive-red-hover);
+  transform: scale(1.05);
+}
+
+.story-audio-track {
+  flex: 1;
+  min-width: 0;
+}
+
+.story-audio-track input[type='range'] {
+  width: 100%;
+  accent-color: var(--color-festive-red);
+  cursor: pointer;
+}
+
+.story-audio-times {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-story);
+  font-size: 0.8rem;
+  color: #7a6558;
+  margin-top: 0.1rem;
+}

@@ -1,11 +1,12 @@
 import React from 'react';
-import './Home.css';
 import { useNavigate } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
+import { useLanguage } from '../context/LanguageContext';
+import StoryAudioPlayer from '../components/StoryAudioPlayer';
+import './Home.css';
 
 function Home() {
   const navigate = useNavigate();
-  const { language, translations } = useLanguage(); // Get translations from context
+  const { language, translations } = useLanguage();
 
   const getNestedTranslation = (obj, path) => {
     return path.split('.').reduce((acc, part) => acc && acc[part], obj);
@@ -16,7 +17,7 @@ function Home() {
 
     if (translatedText === undefined || translatedText === null) {
       console.warn(`Translation for key '${key}' in language '${language}' is undefined or null.`);
-      return key; // Fallback to key if translation is missing
+      return key;
     }
     return translatedText;
   };
@@ -24,34 +25,45 @@ function Home() {
   const introAudioSrc = language === 'de' ? 'audio/intro-de.mp3' : 'audio/intro-en.mp3';
 
   return (
-    <div className="home-content-only">
-      <div className="home-text">
-        <p>{t('home.p1')}</p>
-        <p>{t('home.p2')}</p>
-        <p>{t('home.p3')}</p>
-        <p>{t('home.p4')}</p>
-        <p>{t('home.p5')}</p>
+    <div className="home-stage">
+      <div className="home-layout">
+        <section className="home-panel">
+          <p className="home-kicker">{t('home.kicker')}</p>
+          <h2 className="home-title">{t('home.title')}</h2>
 
-        <div>
-          <button onClick={() => navigate('/intro')} className="start-button">
-            {t('home.button')}
-          </button>
-        </div>
+          <div className="home-copy">
+            <p>{t('home.p1')}</p>
+            <p>{t('home.p2')}</p>
+            <p>{t('home.p3')}</p>
+            <p className="home-fun">{t('home.p4')}</p>
+          </div>
 
-        <p>{t('home.audio_text')}</p>
+          <div className="home-actions">
+            <p className="home-cta-text">{t('home.p5')}</p>
+            <button type="button" onClick={() => navigate('/intro')} className="start-button">
+              {t('home.button')}
+            </button>
 
-        <div>
-          <audio controls key={language} src={`${process.env.PUBLIC_URL}/${introAudioSrc}`}>
-            {t('home.audio_source')}
-          </audio>
-        </div>
+            <div className="home-audio">
+              <p className="home-audio-label">{t('home.audio_text')}</p>
+              <StoryAudioPlayer
+                key={language}
+                src={`${process.env.PUBLIC_URL}/${introAudioSrc}`}
+                playLabel={t('modal.play')}
+                pauseLabel={t('modal.pause')}
+              />
+            </div>
+          </div>
+        </section>
 
-        <img
-          src={`${process.env.PUBLIC_URL}/images/tarek.png`}
-          alt={t('home.alt_image') || "Tarek"}
-          className="boy-image"
-        />
-      </div> {/* Close home-text */}
+        <aside className="home-figure">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/tarek.png`}
+            alt={t('home.alt_image')}
+            className="boy-image"
+          />
+        </aside>
+      </div>
     </div>
   );
 }

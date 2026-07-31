@@ -1,144 +1,200 @@
-.home-content-only {
-  /* This wrapper is now directly within AppLayout's main content area */
+.home-stage {
+  position: relative;
+  width: 100%;
+  padding: 0 1.25rem 2rem;
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(255, 200, 140, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 20% 80%, rgba(20, 10, 30, 0.12) 0%, transparent 50%);
+}
+
+.home-layout {
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  /* align-items: center; */ /* Removed to fix cutoff issue */
-  height: 100%; /* Take full height of parent AppLayout main */
-  width: 100%; /* Take full width of parent AppLayout main */
-  overflow-y: auto; /* Allow scrolling if content is too tall */
-  padding-top: 1rem; /* Added padding-top to prevent content from touching header */
+  gap: 0.5rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  animation: homePanelIn 0.6s ease-out 0.08s both;
 }
 
-.home-content-only > .home-text {
-  margin: 0 auto; /* Center content within the wrapper */
-  max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better text readability */
-  color: #2c2c2c; /* Softer black for less eye strain */
-  padding: 2.5rem;
-  padding-bottom: 3rem; /* Extra bottom padding to ensure button stays inside */
-  border-radius: 12px;
-  border: 2px solid transparent; /* Subtle border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.25rem; /* Larger, more readable */
-  line-height: 1.85; /* Excellent for reading longer text */
-  letter-spacing: 0.01em; /* Subtle letter spacing */
-  min-height: fit-content; /* Ensure container expands to fit all content */
+@keyframes homePanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.home-content-only > .home-text p {
-  margin-bottom: 1.3em; /* Better paragraph spacing */
-  text-align: justify; /* Justified text for a book-like feel */
+.home-panel {
+  flex: 1 1 auto;
+  max-width: 720px;
+  background-color: var(--color-panel);
+  color: var(--color-text);
+  padding: 2.5rem 2.25rem 2.25rem;
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--color-panel-border);
+  box-shadow: var(--shadow-panel);
+  font-family: var(--font-story);
+  position: relative;
+  z-index: 2;
+}
+
+.home-kicker {
+  margin: 0 0 0.3rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a6a58;
+}
+
+.home-title {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  color: var(--color-festive-red);
+}
+
+.home-copy p {
+  margin: 0 0 1.1em;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  text-align: justify;
   text-justify: inter-word;
 }
 
-.home-content-only > .home-text:hover {
-  border-color: #8b1a1a; /* Festive red border on hover */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Slightly more pronounced shadow */
+.home-fun {
+  font-size: 1.3rem !important;
+  font-weight: 700;
+  color: var(--color-festive-red);
+  text-align: left !important;
+}
+
+.home-actions {
+  margin-top: 1.35rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(139, 26, 26, 0.14);
+}
+
+.home-cta-text {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
 }
 
 .start-button {
-  background-color: #f44336;
+  background-color: var(--color-button);
   color: white;
   border: none;
   padding: 1rem 2rem;
-  margin-top: 1rem; /* Reduced margin to bring button closer */
-  margin-bottom: 1.5rem; /* Add bottom margin for spacing from audio text */
   font-size: 1.2rem;
+  font-family: var(--font-ui);
   cursor: pointer;
   border-radius: 8px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background var(--transition-med), transform var(--transition-fast), box-shadow var(--transition-med);
+  box-shadow: 0 4px 12px rgba(139, 26, 26, 0.25);
 }
 
 .start-button:hover {
-  background-color: #d32f2f;
+  background-color: var(--color-button-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 26, 26, 0.35);
 }
 
-.about-link {
-  transition: color 0.3s ease, transform 0.2s ease;
+.home-audio {
+  margin-top: 1.35rem;
 }
 
-.about-link:hover {
-  color: #c0c0c0 !important; /* Lighter grey for hover */
-  transform: translateY(-2px);
+.home-audio-label {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+  color: #7a6558;
+}
+
+.home-figure {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: min(200px, 22vw);
+  align-self: flex-end;
+  margin-left: -0.25rem;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .boy-image {
-  position: absolute; /* or use flex if preferred */
-  right: 2rem;
-  bottom: 0;
-  height: 70vh;
-  background: none;
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-  z-index: 5;
-  pointer-events: none;
+  display: block;
+  width: auto;
+  height: min(58vh, 520px);
+  max-width: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 10px 22px rgba(20, 10, 5, 0.28));
+  user-select: none;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .home-content-only > .home-text {
-    max-width: 90%;
-    margin: 0 auto; /* Center the text when image is hidden */
+@media (max-width: 1200px) {
+  .home-figure {
+    width: min(170px, 20vw);
   }
 
   .boy-image {
-    display: none; /* Hide image on tablets and smaller to prevent overlap */
+    height: min(52vh, 460px);
   }
 }
 
-/* Show image only on larger screens where there's room */
-@media (min-width: 1025px) {
-  .boy-image {
-    display: block;
+@media (max-width: 980px) {
+  .home-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .home-panel {
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .home-figure {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
-  .home-content-only {
-    flex-direction: column; /* Stack elements vertically */
-    gap: 1.5rem;
+  .home-stage {
+    padding: 0 0.75rem 1.5rem;
   }
 
-  .home-content-only > .home-text {
-    max-width: 95%;
-    padding: 1.8rem;
-    font-size: 1.15rem; /* Still readable on mobile */
-    margin: 1rem auto;
+  .home-panel {
+    padding: 1.5rem 1.35rem 1.6rem;
+  }
+
+  .home-copy p {
+    font-size: 1.06rem;
     line-height: 1.75;
   }
 
-  .home-content-only > .home-text p {
-    margin-bottom: 1.2em;
-  }
-
-  /* Image is already hidden by the 1024px breakpoint */
-
-  .start-button, .about-link {
-    padding: 0.8rem 1.5rem;
+  .start-button {
+    width: 100%;
+    padding: 0.9rem 1.4rem;
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .home-content-only > .home-text {
-    font-size: 1.05rem; /* Keep readable on small screens */
-    padding: 1.5rem;
-    margin: 0.8rem auto;
-    line-height: 1.7;
+  .home-panel {
+    padding: 1.25rem 1.1rem 1.35rem;
   }
 
-  .home-content-only > .home-text p {
-    margin-bottom: 1.1em;
+  .home-title {
+    font-size: 1.7rem;
   }
 
-  .start-button, .about-link {
-    padding: 0.7rem 1.2rem;
-    font-size: 1rem;
+  .home-copy p {
+    font-size: 1.02rem;
   }
-
-  /* Image is already hidden by the 1024px breakpoint */
 }

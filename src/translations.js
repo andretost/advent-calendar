@@ -9,17 +9,37 @@ const translations = {
       home: "Startseite",
       intro: "Intro",
       calendar: "Kalender",
+      characters: "Bewohner",
       recipes: "Rezepte",
       about: "Über dieses Projekt..."
     },
+    settings: {
+      accessibility: "Darstellung",
+      text_size: "Textgröße",
+      text_normal: "Normal",
+      text_large: "Groß",
+      text_xlarge: "Sehr groß",
+      dyslexia_font: "Lesefreundliche Schrift",
+      reduced_motion: "Weniger Bewegung"
+    },
+    characters_page: {
+      title: "Die Bewohner von Haus Nr. 24",
+      intro: "Öffne die Adventstüren, um die Menschen kennenzulernen, die Tarek begegnet. Neue Bewohner erscheinen hier, sobald du den passenden Tag geöffnet hast.",
+      progress: "{{unlocked}} von {{total}} kennengelernt",
+      locked_title: "Noch nicht bekannt",
+      locked_text: "Öffne die Tür vom {{dayNumber}}. Dezember, um diese Person kennenzulernen.",
+      from_day: "Zum {{dayNumber}}. Dezember"
+    },
     home: {
-      p1: "Willkommen! Dieses Buch erzählt die Geschichte von Tarek, einem jungen Flüchtling aus Syrien, den es mit seiner Familie nach Osnabrück verschlagen hat. Während der Adventszeit lernt er die Menschen in seinem Haus kennen, und gewinnt einen Einblick in ihre vorweihnachtlichen Gebräuche - und die damit verbundenen Rezepte!",
+      kicker: "Haus Nr. 24 · Osnabrück",
+      title: "Willkommen!",
+      p1: "Dieses Buch erzählt die Geschichte von Tarek, einem jungen Flüchtling aus Syrien, den es mit seiner Familie nach Osnabrück verschlagen hat. Während der Adventszeit lernt er die Menschen in seinem Haus kennen, und gewinnt einen Einblick in ihre vorweihnachtlichen Gebräuche – und die damit verbundenen Rezepte!",
       p2: "Dabei ist es nicht wirklich ein Buch, sondern ein Adventskalender. Jeder Tag hat eine neue Geschichte, bis es schliesslich und endlich Weihnachten ist.",
       p3: "Wir hoffen, dass die Geschichte euch ermuntert, selbst ein wenig zu backen und zu kochen und zu basteln. Aber nicht vergessen: nur eine Seite pro Tag!",
       p4: "Viel Spass!!!",
       p5: "Klicke unten, um den Adventskalender zu öffnen.",
       button: "Hier geht's los...",
-      audio_text: "Klicke hier, um das Audio zu hören.",
+      audio_text: "Zur Einstimmung kannst du dir die Geschichte auch anhören:",
       audio_source: "Ihr Browser unterstützt kein Audio.",
       alt_image: "Tarek"
     },
@@ -44,18 +64,38 @@ const translations = {
     },
     calendar_page: {
       info_box_title: "Und so werden die Türen geöffnet...",
-      info_box_p1: "Du kannst die Türen öffnen, indem du auf die Zahlen für den jeweiligen Tag klickst. Wenn du auf eine Zahl klickst, wird der Inhalt der Tür angezeigt.",
-      info_box_p2: "In dem Fenster für jeden Tag kannst Du ziwschen dem Bild und dem Text hin und her schalten, indem Du auf das Bild bzw. den Text klickst.",
-      info_box_p3: "Die Tage, die Du schon angeklickt hast, werden mit einem Stern markiert.",
+      info_box_p1: "Klicke auf die Zahlen am Haus, um die Tür für diesen Tag zu öffnen.",
+      info_box_p2: "Im Fenster kannst du zwischen Bild und Geschichte wechseln, indem du auf das Bild oder den Text klickst.",
+      info_box_p3: "Geöffnete Tage leuchten und sind mit einem Stern markiert. Dein Fortschritt wird gespeichert.",
+      info_box_p4: "Mit der Adventssperre lassen sich nur heutige und frühere Türen öffnen. Du kannst sie im Menü ausschalten.",
       day_date: "{{dayNumber}}. Dezember",
       no_content: "Kein Inhalt für Tag {{day}} gefunden.",
       alt_day_image: "Tag {{day}}",
       alt_calendar_image: "Adventskalender",
-      alt_star_overlay: "Geöffnet"
+      alt_star_overlay: "Geöffnet",
+      progress: "{{opened}} von {{total}} Türen geöffnet",
+      back: "Zurück",
+      help: "Hilfe",
+      menu: "Menü",
+      help_dismiss: "Verstanden",
+      ambient_on: "Atmosphäre",
+      ambient_off: "Stille",
+      lock_toggle_label: "Adventssperre",
+      lock_toggle_help: "Nur heutige und frühere Türen (im Dezember). Für Vorschau ausschalten.",
+      lock_on: "An",
+      lock_off: "Aus",
+      lock_active_badge: "Sperre an",
+      preview_badge: "Vorschau",
+      locked_toast: "Der {{dayNumber}}. Dezember ist noch nicht freigeschaltet."
     },
     modal: {
       close: "Schliessen",
-      day_content_label: "Tagesinhalt"
+      day_content_label: "Tagesinhalt",
+      flip_to_story: "Klicke auf das Bild, um die Geschichte zu lesen",
+      flip_to_image: "Klicke auf den Text, um zum Bild zurückzukehren",
+      play: "Abspielen",
+      pause: "Pause",
+      print: "Drucken"
     }
   },
   en: {
@@ -68,17 +108,37 @@ const translations = {
       home: "Home",
       intro: "Intro",
       calendar: "Calendar",
+      characters: "Residents",
       recipes: "Recipes",
       about: "About This Project..."
     },
+    settings: {
+      accessibility: "Display",
+      text_size: "Text size",
+      text_normal: "Normal",
+      text_large: "Large",
+      text_xlarge: "Extra large",
+      dyslexia_font: "Reader-friendly font",
+      reduced_motion: "Reduce motion"
+    },
+    characters_page: {
+      title: "The residents of House No. 24",
+      intro: "Open the Advent doors to meet the people Tarek encounters. New residents appear here once you have opened their day.",
+      progress: "{{unlocked}} of {{total}} met",
+      locked_title: "Not met yet",
+      locked_text: "Open the door for December {{dayNumber}} to meet this person.",
+      from_day: "Go to December {{dayNumber}}"
+    },
     home: {
-      p1: "Welcome! This book tells the story of Tarek, a young refugee from Syria, who, along with his family, has found his way to Osnabrück. During Advent, he gets to know the people in his building and gains insight into their pre-Christmas customs – and the associated recipes!",
+      kicker: "House No. 24 · Osnabrück",
+      title: "Welcome!",
+      p1: "This book tells the story of Tarek, a young refugee from Syria, who, along with his family, has found his way to Osnabrück. During Advent, he gets to know the people in his building and gains insight into their pre-Christmas customs – and the associated recipes!",
       p2: "However, it's not really a book, but an Advent calendar. Each day has a new story, until Christmas finally arrives.",
       p3: "We hope the story encourages you to do a little baking, cooking, and crafting yourself. But don't forget: only one page per day!",
       p4: "Have fun!!!",
       p5: "Click below to open the Advent calendar.",
       button: "Start here...",
-      audio_text: "Click here to listen to the audio.",
+      audio_text: "You can also listen to the introduction:",
       audio_source: "Your browser does not support the audio element.",
       alt_image: "Tarek"
     },
@@ -103,18 +163,38 @@ const translations = {
     },
     calendar_page: {
       info_box_title: "And this is how the doors are opened...",
-      info_box_p1: "You can open the doors by clicking on the numbers for the respective day. When you click on a number, the content of the door will be displayed.",
-      info_box_p2: "In the window for each day, you can switch between the image and the text by clicking on the image or the text.",
-      info_box_p3: "The days you have already clicked will be marked with a star.",
+      info_box_p1: "Click the numbers on the house to open that day's door.",
+      info_box_p2: "In the window, switch between the picture and the story by clicking the image or the text.",
+      info_box_p3: "Opened days glow and are marked with a star. Your progress is saved.",
+      info_box_p4: "With Advent lock on, only today’s and earlier doors open. You can turn it off in the menu.",
       day_date: "December {{dayNumber}}",
       no_content: "No content found for day {{day}}.",
       alt_day_image: "Day {{day}}",
       alt_calendar_image: "Advent calendar",
-      alt_star_overlay: "Opened"
+      alt_star_overlay: "Opened",
+      progress: "{{opened}} of {{total}} doors opened",
+      back: "Back",
+      help: "Help",
+      menu: "Menu",
+      help_dismiss: "Got it",
+      ambient_on: "Ambience",
+      ambient_off: "Quiet",
+      lock_toggle_label: "Advent lock",
+      lock_toggle_help: "Only today’s and earlier doors (in December). Turn off for preview.",
+      lock_on: "On",
+      lock_off: "Off",
+      lock_active_badge: "Lock on",
+      preview_badge: "Preview",
+      locked_toast: "December {{dayNumber}} is not unlocked yet."
     },
     modal: {
       close: "Close",
-      day_content_label: "Day Content"
+      day_content_label: "Day Content",
+      flip_to_story: "Click the image to read the story",
+      flip_to_image: "Click the text to return to the image",
+      play: "Play",
+      pause: "Pause",
+      print: "Print"
     }
   }
 };

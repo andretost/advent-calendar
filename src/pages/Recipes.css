@@ -1,35 +1,52 @@
 .recipes-page {
-  min-height: 100vh;
-  padding: 2rem;
-  color: #fff; /* Default text color for the page */
+  min-height: 100%;
+  padding: 0 1.25rem 2.5rem;
   text-align: center;
-  padding-top: 1rem;
 }
 
 .recipes-content-wrapper {
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better readability */
-  color: #2c2c2c; /* Softer black for less eye strain */
-  padding: 2.5rem;
-  margin: 2rem auto;
+  background-color: var(--color-panel);
+  color: var(--color-text);
+  padding: 2.4rem;
+  margin: 0.5rem auto;
   max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-size: 1.2rem;
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--color-panel-border);
+  box-shadow: var(--shadow-panel);
+  font-family: var(--font-story);
+  font-size: 1.18rem;
   line-height: 1.8;
-  text-align: left; /* Align text left within the content box */
+  text-align: left;
+  transition: border-color var(--transition-med), box-shadow var(--transition-med);
+}
+
+.recipes-content-wrapper:hover {
+  border-color: rgba(139, 26, 26, 0.45);
+  box-shadow: var(--shadow-panel-hover);
 }
 
 .recipes-content-wrapper h1 {
-  font-family: 'Mountains of Christmas', serif;
-  font-size: 2.8rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: bold;
-  color: #8b1a1a;
-  margin-bottom: 1.5rem;
+  color: var(--color-festive-red);
+  margin: 0 0 1.25rem;
   text-align: center;
+  line-height: 1.15;
 }
 
 .recipes-content-wrapper p {
-  margin-bottom: 1.3em;
+  margin: 0 0 1.2em;
   text-align: justify;
-  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .recipes-page {
+    padding: 0.85rem 0.75rem 2rem;
+  }
+
+  .recipes-content-wrapper {
+    padding: 1.5rem;
+    font-size: 1.08rem;
+  }
 }
