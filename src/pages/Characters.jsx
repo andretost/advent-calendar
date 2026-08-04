@@ -36,16 +36,18 @@ const Characters = () => {
   };
 
   const cards = useMemo(() => {
-    return characters.map((character) => {
-      const unlocked = openedDays.includes(character.unlockDay);
-      return {
-        ...character,
-        unlocked,
-        name: language === 'en' ? character.name_en : character.name_de,
-        role: language === 'en' ? character.role_en : character.role_de,
-        bio: language === 'en' ? character.bio_en : character.bio_de,
-      };
-    });
+    return characters
+      .map((character) => {
+        const unlocked = openedDays.includes(character.unlockDay);
+        return {
+          ...character,
+          unlocked,
+          name: language === 'en' ? character.name_en : character.name_de,
+          role: language === 'en' ? character.role_en : character.role_de,
+          bio: language === 'en' ? character.bio_en : character.bio_de,
+        };
+      })
+      .sort((a, b) => parseInt(a.unlockDay, 10) - parseInt(b.unlockDay, 10));
   }, [openedDays, language]);
 
   const unlockedCount = cards.filter((c) => c.unlocked).length;

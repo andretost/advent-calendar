@@ -62,6 +62,16 @@ const splitParagraphs = (text) =>
     .map((p) => p.trim())
     .filter(Boolean);
 
+const playDoorChime = () => {
+  try {
+    const audio = new Audio(`${process.env.PUBLIC_URL}/chime.mp3`);
+    audio.volume = 0.75;
+    audio.play().catch(() => {});
+  } catch {
+    /* ignore autoplay / missing audio errors */
+  }
+};
+
 const CalendarImage = ({ openedDays, setOpenedDays }) => {
   const imageRef = useRef();
   const wrapperRef = useRef();
@@ -139,6 +149,9 @@ const CalendarImage = ({ openedDays, setOpenedDays }) => {
       return;
     }
 
+    const isFirstOpen = !openedDays.includes(day);
+    if (isFirstOpen) playDoorChime();
+
     setOpenedDays((prev) => (prev.includes(day) ? prev : [...prev, day]));
     setShowModalImage(true);
 
@@ -157,7 +170,7 @@ const CalendarImage = ({ openedDays, setOpenedDays }) => {
 
     setOpeningDay(day);
     window.setTimeout(reveal, 480);
-  }, [calendarHref, doorsUnlocked, navigate, reducedMotion, setOpenedDays]);
+  }, [calendarHref, doorsUnlocked, navigate, openedDays, reducedMotion, setOpenedDays]);
 
   useEffect(() => {
     const day = normalizeDayParam(dayNumber);

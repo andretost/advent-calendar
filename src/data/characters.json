@@ -8,7 +8,7 @@
     "bio_de": "Tarek lebt mit seiner Familie im 1. Stock von Haus Nr. 24 in Osnabrück. Er ist aus Syrien geflohen, geht in die dritte Klasse und lernt Deutsch. Über Susanne Tischler findet er Anschluss zu den Nachbarn und entdeckt Adventstraditionen.",
     "bio_en": "Tarek lives with his family on the first floor of House No. 24 in Osnabrück. He fled Syria, is in third grade, and is still learning German. Through Susanne Tischler he connects with the neighbors and discovers Advent traditions.",
     "unlockDay": "01",
-    "image": "images/tarek.png"
+    "image": "images/characters/tarek-portrait.jpg"
   },
   {
     "id": "susanne-tischler",
@@ -19,7 +19,7 @@
     "bio_de": "Susanne wohnt im Erdgeschoss. Wegen eines Beinbruchs ist sie zu Hause und hilft Tarek bei den Hausaufgaben. Sie backt, bastelt und lädt die Hausgemeinschaft zu Adventsfeiern ein.",
     "bio_en": "Susanne lives on the ground floor. Home with a broken leg, she helps Tarek with homework. She bakes, crafts, and brings the house community together for Advent gatherings.",
     "unlockDay": "01",
-    "image": "images/01.png"
+    "image": "images/characters/susanne-tischler.jpg"
   },
   {
     "id": "aliya-sabia",
@@ -30,7 +30,7 @@
     "bio_de": "Aliya arbeitet viel und bereitet ihrer Familie Tee und Essen zu. Sie lädt die Nachbarn ein und nimmt an den gemeinsamen Abenden im Haus teil.",
     "bio_en": "Aliya works a lot and prepares tea and meals for her family. She invites the neighbors and joins the shared evenings in the house.",
     "unlockDay": "02",
-    "image": "images/02.png"
+    "image": "images/characters/aliya-sabia.jpg"
   },
   {
     "id": "bilal-sabia",
@@ -41,18 +41,29 @@
     "bio_de": "Bilal erlaubt Tarek zunächst vorsichtig, zu Susanne zu gehen. Er stellt die Familie bei den Nachbarn vor und nimmt an Einladungen teil.",
     "bio_en": "Bilal cautiously agrees to let Tarek visit Susanne. He introduces the family to the neighbors and joins their invitations.",
     "unlockDay": "02",
-    "image": "images/02.png"
+    "image": "images/characters/bilal-sabia.jpg"
+  },
+  {
+    "id": "amar-and-nael-sabia",
+    "name_de": "Amar und Nael Sabia",
+    "name_en": "Amar and Nael Sabia",
+    "role_de": "Tareks ältere Brüder",
+    "role_en": "Tarek’s older brothers",
+    "bio_de": "Amar und Nael wohnen mit Tarek und den Eltern im 1. Stock. Bilal stellt sie beim Adventssingen vor; später sitzen sie mit am Tisch, gehen mit auf den See oder spielen bei den Nachbarn.",
+    "bio_en": "Amar and Nael live with Tarek and their parents on the first floor. Bilal introduces them at the Advent singing; later they join dinners, the ice rink, and evenings with the neighbors.",
+    "unlockDay": "06",
+    "image": "images/characters/amer-and-nael-bilal.jpg"
   },
   {
     "id": "jakob-stein",
     "name_de": "Jakob Stein",
     "name_en": "Jakob Stein",
-    "role_de": "Älterer Nachbar im 3. Stock; Jude",
-    "role_en": "Elderly neighbor on the third floor; Jewish",
+    "role_de": "Älterer Nachbar im 3. Stock; Rentner",
+    "role_en": "Elderly neighbor on the third floor; retiree",
     "bio_de": "Herr Stein wohnt seit über 40 Jahren im Haus. Er zeigt Tarek ein Hamsa aus Israel; seine Tochter lebt dort, sein Sohn in New York. Die Nachbarn schauen nach ihm.",
     "bio_en": "Mr. Stein has lived in the house for over forty years. He shows Tarek a Hamsa from Israel; his daughter lives there, his son in New York. The neighbors look in on him.",
     "unlockDay": "04",
-    "image": "images/04.png"
+    "image": "images/characters/herr-stein.jpg"
   },
   {
     "id": "chika-wild",
@@ -63,7 +74,7 @@
     "bio_de": "Chika lebt mit ihrem Mann John neben Familie Sabia. Mit Tarek und Susanne bastelt sie Vogelfutter-Schmuck und nimmt am Leben im Haus teil.",
     "bio_en": "Chika lives with her husband John next to the Sabia family. With Tarek and Susanne she makes bird-feeder ornaments and joins life in the house.",
     "unlockDay": "05",
-    "image": "images/05.png"
+    "image": "images/characters/chika-wild.jpg"
   },
   {
     "id": "john-wild",
@@ -74,7 +85,7 @@
     "bio_de": "John kommt aus den USA und arbeitet als Ingenieur bei einer Firma für Windkraftanlagen. Er wohnt mit Chika im 1. Stock und nimmt an Ausflügen der Nachbarn teil.",
     "bio_en": "John is from the USA and works as an engineer for a wind-turbine company. He lives with Chika on the first floor and joins the neighbors’ outings.",
     "unlockDay": "05",
-    "image": "images/05.png"
+    "image": "images/characters/john-wild.jpg"
   },
   {
     "id": "uwe-tischler",
@@ -85,7 +96,7 @@
     "bio_de": "Uwe wird Tarek beim Adventssingen vorgestellt. Er begleitet Ausflüge und unterstützt Susanne bei Dekoration und Festvorbereitungen.",
     "bio_en": "Uwe is introduced to Tarek at the Advent singing. He joins outings and helps Susanne with decorations and celebrations.",
     "unlockDay": "06",
-    "image": "images/06.png"
+    "image": "images/characters/uwe-tischler.jpg"
   },
   {
     "id": "martha-langer",
@@ -96,7 +107,7 @@
     "bio_de": "Martha gehört zu den längsten Bewohnern des Hauses. Sie zeigt Tarek Schwippbögen aus dem Erzgebirge und serviert Stollen und Tee.",
     "bio_en": "Martha is one of the longest-standing residents. She shows Tarek Schwibbögen from the Erzgebirge and serves Stollen and tea.",
     "unlockDay": "06",
-    "image": "images/06.png"
+    "image": "images/characters/martha-langer.jpg"
   },
   {
     "id": "judith-bruns",
@@ -107,7 +118,7 @@
     "bio_de": "Judith wohnt mit ihrer Tochter Tonja im 3. Stock. Sie leitet das Adventssingen und zeigt Tarek Blasinstrumente.",
     "bio_en": "Judith lives with her daughter Tonja on the third floor. She leads the Advent singing and shows Tarek brass instruments.",
     "unlockDay": "06",
-    "image": "images/06.png"
+    "image": "images/characters/judith-bruns.jpg"
   },
   {
     "id": "tonja-bruns",
@@ -118,7 +129,18 @@
     "bio_de": "Tonja geht auf dieselbe Schule wie Tarek. Sie sammeln Zapfen, basteln und unternehmen gemeinsam Ausflüge.",
     "bio_en": "Tonja goes to the same school as Tarek. They collect pinecones, craft together, and go on outings.",
     "unlockDay": "06",
-    "image": "images/tarek-and-tonja.png"
+    "image": "images/characters/tonja-bruns.jpg"
+  },
+  {
+    "id": "joerg-martin-and-sven",
+    "name_de": "Jörg, Martin und Sven",
+    "name_en": "Jörg, Martin and Sven",
+    "role_de": "Studenten-WG im 2. Stock; Universitätsorchester",
+    "role_en": "Student flatmates on the second floor; university orchestra",
+    "bio_de": "Die drei studieren in Osnabrück und wohnen im 2. Stock rechts. Beim Adventssingen spielen sie Trompete und Posaune; später hört man sie auf dem Weihnachtsmarkt und im Schlosskonzert.",
+    "bio_en": "The three study in Osnabrück and live on the second floor, right side. At the Advent singing they play trumpet and trombone; later they perform at the Christmas market and the castle concert.",
+    "unlockDay": "06",
+    "image": "images/characters/joerg-martin-and-sven.jpg"
   },
   {
     "id": "ajit-shan",
@@ -129,7 +151,7 @@
     "bio_de": "Ajit kommt mit seiner Frau Rati aus Indien; beide arbeiten als Ärzte. Die Familie lädt Nachbarn zu Speisen und Sternenlichtern ein.",
     "bio_en": "Ajit and his wife Rati are from India; both work as doctors. The family invites neighbors for food and star lanterns.",
     "unlockDay": "08",
-    "image": "images/08.png"
+    "image": "images/characters/ajit-shan.jpg"
   },
   {
     "id": "rati-shan",
@@ -140,6 +162,28 @@
     "bio_de": "Rati ist Ärztin und kocht für Gäste. Mit den Kindern bastelt sie Sternenlaternen für den Hausflur.",
     "bio_en": "Rati is a doctor and cooks for guests. With the children she makes star lanterns for the stairwell.",
     "unlockDay": "08",
-    "image": "images/08.png"
+    "image": "images/characters/rati-shan.jpg"
+  },
+  {
+    "id": "sita-and-amit-shan",
+    "name_de": "Sita und Amit Shan",
+    "name_en": "Sita and Amit Shan",
+    "role_de": "Kinder von Ajit und Rati; Nachbarn im 2. Stock",
+    "role_en": "Children of Ajit and Rati; neighbors on the second floor",
+    "bio_de": "Amit und seine kleine Schwester Sita wohnen mit ihren Eltern im zweiten Stock. Beim Sternenlaternen-Basteln und bei gemeinsamen Abenden freuen sie sich über Besuch und Mitspieler.",
+    "bio_en": "Amit and his little sister Sita live with their parents on the second floor. When making star lanterns and on shared evenings, they are glad to have visitors and playmates.",
+    "unlockDay": "08",
+    "image": "images/characters/sita-and-amit-shan.jpg"
+  },
+  {
+    "id": "paul-and-klaas-tischler",
+    "name_de": "Paul und Klaas Tischler",
+    "name_en": "Paul and Klaas Tischler",
+    "role_de": "Söhne von Susanne und Uwe; Studenten",
+    "role_en": "Sons of Susanne and Uwe; students",
+    "bio_de": "Paul studiert Physik in Tübingen, Klaas Mathematik und Informatik in Berlin. Zu Weihnachten kommen sie nach Hause: Paul hilft beim Baumschmücken, und beide unterstützen die Nachbarsfeier am 24.",
+    "bio_en": "Paul studies physics in Tübingen, Klaas math and computer science in Berlin. They come home for Christmas: Paul helps decorate the tree, and both help with the neighbors’ celebration on the 24th.",
+    "unlockDay": "23",
+    "image": "images/characters/paul-and-klaas-tischler.jpg"
   }
 ]
