@@ -3,6 +3,13 @@ import { useSearchParams } from 'react-router-dom';
 
 const SettingsContext = createContext(null);
 
+/**
+ * Advent date lock master switch.
+ * Set to `true` when you want doors limited to today-and-earlier (and the
+ * menu / ?preview=1 unlock behavior). Leave `false` while testers explore.
+ */
+export const ADVENT_DATE_LOCK = false;
+
 const STORAGE = {
   doorLock: 'advent-calendar-door-lock',
   fontScale: 'advent-calendar-font-scale',
@@ -103,7 +110,7 @@ export const SettingsProvider = ({ children }) => {
   };
 
   const reducedMotion = reducedMotionPref || systemReducedMotion;
-  const doorsUnlocked = previewUnlock || !doorLockEnabled;
+  const doorsUnlocked = !ADVENT_DATE_LOCK || previewUnlock || !doorLockEnabled;
 
   useEffect(() => {
     document.documentElement.style.setProperty('--font-scale', String(fontScale));
